@@ -1,0 +1,12 @@
+*.vim
+__pycache__/
+develop_server.sh
+fabfile.py
+output/
+pelican.pid
+pelicanconf.py
+pelican-plugins/
+publishconf.py
+srv.pid
+themes/
+venv/
