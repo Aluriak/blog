@@ -7,7 +7,8 @@ from functools import partial
 
 
 KNOWN_TAGS = (
-    'python', 'tools', 'language', 'graph', 'bioinformatic', 'meta', 'bio'
+    'python', 'tools', 'language', 'graph', 'bioinformatic', 'meta', 'bio',
+    'env', 'c/c++', 'rdf', 'opinion', 'stdlib',
 )
 KNOWN_LANGS = (('english', 'en'), ('français', 'fr'), ('lojban', 'lj'))
 DEFAULT_LANG = KNOWN_LANGS[0][0]
@@ -38,6 +39,8 @@ translation: {}
 def language_shortcut(lang, languages=KNOWN_LANGS):
     """Get the shortcut from given (fullname, shortname) list of language.
 
+    >>>language_shortcut('angleesh') is None
+    True
     >>>language_shortcut('english')
     'en'
     >>>language_shortcut('lj')
