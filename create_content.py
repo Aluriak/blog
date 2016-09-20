@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Wrapper generating an article for the website."""
 import os
 import re
@@ -5,8 +6,9 @@ import datetime
 from functools import partial
 
 
-KNOWN_CATEGORIES = ('bioinformatic', 'informatic', 'meta')
-KNOWN_TAGS = ('python', 'tools', 'language', 'graph', 'bioinformatic', 'meta')
+KNOWN_TAGS = (
+    'python', 'tools', 'language', 'graph', 'bioinformatic', 'meta', 'bio'
+)
 KNOWN_LANGS = (('english', 'en'), ('français', 'fr'), ('lojban', 'lj'))
 DEFAULT_LANG = KNOWN_LANGS[0][0]
 DEFAULT_AUTHOR = 'Lucas Bourneuf'
@@ -17,7 +19,6 @@ TEMPLATE_FILENAME = 'content/{}_{}.mkd'
 TEMPLATE_CONTENT = """Title: {}
 Date: {}
 Modified: {}
-Category: {}
 Tags: {}
 Authors: {}
 Summary: {}
@@ -61,7 +62,6 @@ def human_words(string, expecteds):
         yield word
 # specialize the function for specific use cases
 human_tags = partial(human_words, expecteds=KNOWN_TAGS)
-human_category = partial(human_words, expecteds=KNOWN_CATEGORIES)
 
 def human_lang(string):
     for names in KNOWN_LANGS:
@@ -71,7 +71,7 @@ def human_lang(string):
     return DEFAULT_LANG
 
 
-def generated(title, tags, category, *, lang=DEFAULT_LANG, date=None,
+def generated(title, tags, *, lang=DEFAULT_LANG, date=None,
               is_translation=False, authors=DEFAULT_AUTHOR, summary=''):
     """Write in ./content/ directory a file containing the markdown formatted
     squelleton for the given article."""
@@ -80,7 +80,7 @@ def generated(title, tags, category, *, lang=DEFAULT_LANG, date=None,
     slug = ''.join(c for c in title.strip().lower().replace(' ', '-')
                    if re.fullmatch(REGEX_SLUG, c))
     content = TEMPLATE_CONTENT.format(
-        title, date, date, category, tags, authors, summary,
+        title, date, date, tags, authors, summary,
         slug, lang, 'true' if is_translation else 'false'
     )
 
@@ -94,8 +94,7 @@ def generated(title, tags, category, *, lang=DEFAULT_LANG, date=None,
 
 generated(
     title=input('Title: '),
-    tags=', '.join(human_tags(input('tags: '))),
-    category=next(human_category(input('category: '))),
+    tags=', '.join(human_tags(input('TAGS: {}\ntags: '.format(', '.join(KNOWN_TAGS))))),
     summary=input('summary: '),
     lang=human_lang(input('lang[en/fr/lj]: ')),
     is_translation = human_bool(input('translation [y/n]: ')),
