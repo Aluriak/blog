@@ -26,6 +26,7 @@ Summary: {}
 Slug: {}
 lang: {}
 translation: {}
+status: draft
 
 # First title
 
