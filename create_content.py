@@ -8,7 +8,7 @@ from functools import partial
 
 KNOWN_TAGS = (
     'python', 'tools', 'language', 'graph', 'bioinformatic', 'meta', 'bio',
-    'env', 'c/c++', 'rdf', 'opinion', 'stdlib',
+    'env', 'c/c++', 'rdf', 'opinion', 'stdlib', 'space'
 )
 KNOWN_LANGS = (('english', 'en'), ('français', 'fr'), ('lojban', 'lj'))
 DEFAULT_LANG = KNOWN_LANGS[0][0]
