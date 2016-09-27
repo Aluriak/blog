@@ -14,7 +14,7 @@ from markdown.extensions import Extension
 class CheckBoxExtension(Extension):
     def extendMarkdown(self, md, md_globals):
         # Insert CheckBoxPreprocessor instance into markdown preprocessors
-        md.preprocessors.add('del', CheckBoxPreprocessor(), '_begin')
+        md.preprocessors.add('checkbox', CheckBoxPreprocessor(), '_begin')
 
 
 def regex_id_from_icon_names(names):
