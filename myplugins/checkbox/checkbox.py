@@ -53,7 +53,9 @@ class CheckBoxPreprocessor(Preprocessor):
 
     ICONS = {
         ' ': 'square-o',
-        'x': 'check-square-o',
+        'v': 'check-square-o',
+        'x': 'times',
+        'n': 'times',
         'l': 'link',
         's': 'space-shuttle',
         'g': 'gitlab',
@@ -62,12 +64,16 @@ class CheckBoxPreprocessor(Preprocessor):
         '-': 'minus',
         'o': 'ok-sign',
         'b': 'bomb',
+        '»': 'caret-right',
+        '«': 'caret-left',
+        '>': 'chevron-right',
+        '<': 'chevron-left',
     }
     CHECK_BOX_REGEX = re.compile(
-        r'\[([{}]+)\]'.format(regex_id_from_icon_names(ICONS))
+        r'\[([{}]+)\][^(]'.format(regex_id_from_icon_names(ICONS))
     )
     TEMPLATE_SPAN = '<span class="fa-stack {}">{}</span>'  # size, icons
-    TEMPLATE_ICON = '<i class="fa{}{}{}"></i>'
+    TEMPLATE_ICON = '<i class="fa{}{}{} fa-fw"></i>'
 
 
     def run(self, lines:iter) -> iter:
@@ -117,5 +123,5 @@ class CheckBoxPreprocessor(Preprocessor):
                 stack_size = 'fa-{}x'.format(last_char)
             return CheckBoxPreprocessor.TEMPLATE_SPAN.format(
                 stack_size,
-            ''.join(icons)
-        )
+                ''.join(icons)
+            )
