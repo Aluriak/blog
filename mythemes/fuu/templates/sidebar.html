@@ -1,0 +1,43 @@
+<ul class="nav nav-list">
+
+
+    <!--Blog pages-->
+    <li class="nav-header"><h4><i class="icon-bars icon-large"></i>pages/</h4></li>
+        <li><a href="{{ SITEURL }}">              <i class="icon-home"></i>home</a></li>
+        <li><a href="{{ SITEURL }}/archives.html"><i class="icon-th-list"></i>archives</a></li>
+    <!--RSS feed-->
+    {% if FEED_RSS %}
+        <li><a href="{{ SITEURL }}/{{ FEED_RSS }}"><i class="icon-rss"></i>rss</a></li>
+    {% endif %}
+    {% if FEED_ATOM %}
+        <li><a href="{{ SITEURL }}/{{ FEED_ATOM }}"><i class="icon-rss"></i>atom</a></li>
+    {% endif %}
+
+    <!--Other web locations-->
+    {% if LINKS %}
+    <li class="nav-header"><h4><i class="icon-external-link icon-large"></i>www/</h4></li>
+        {% for icon, name, link in LINKS %}
+            <li><a href="{{ link }}"><i class="icon-{{ icon }}"></i>{{ name }}</a></li>
+        {% endfor %}
+    {% endif %}
+
+
+    <li class="nav-header"><h4><i class="icon-tags icon-large"></i>annotations/</h4></li>
+        <ul class="tagcloud" list-style=none>
+            {% for tag in tag_cloud %}
+                <li class="tag-{{ tag.1 }}">
+                    <a href="{{ SITEURL }}/{{ tag.0.url }}">
+                        <i class="icon-tag"></i>{{ tag.0 }}
+                        {% if TAG_CLOUD_BADGE %}
+                            <!--<span class="badge">{{ tag.2 }}</span>-->
+                            <strong>({{ tag.2 }})</strong>
+                        {% endif %}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+{% if SIDEBAR_CUSTOM %}
+    {{ SIDEBAR_CUSTOM }}
+{% endif %}
+</ul>
