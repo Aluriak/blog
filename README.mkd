@@ -1,0 +1,15 @@
+# Blog
+Tentative de blog, publié sur [le net](http://lucas.bourneuf.net/blog).
+
+- *mythemes*: tentatives de création de themes (reposant plus sur l'oblitération de css de thèmes existants).
+- *myplugins*: implémentation de plugins pour le parsing du Markdown.
+- *content*: articles publiés (ou pas).
+
+
+## My themes
+- fuu: tentative de créer un thème from scratch.
+- bootstrap2-dark: copie modifiée du thème du même nom.
+- nmnlist: copie modifiée du thème du même nom.
+
+## My plugins
+TODO
