@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""Wrapper generating an article for the website."""
+"""Wrapper generating an article for the website.
+
+"""
+
+
 import os
 import re
 import datetime
@@ -8,7 +12,7 @@ from functools import partial
 
 KNOWN_TAGS = (
     'python', 'tools', 'language', 'graph', 'bioinformatic', 'meta', 'bio',
-    'env', 'c/c++', 'rdf', 'opinion', 'stdlib', 'space'
+    'env', 'c/c++', 'rdf', 'opinion', 'stdlib', 'space', 'project',
 )
 KNOWN_LANGS = (('english', 'en'), ('français', 'fr'), ('lojban', 'lj'))
 DEFAULT_LANG = KNOWN_LANGS[0][0]
@@ -54,9 +58,11 @@ def language_shortcut(lang, languages=KNOWN_LANGS):
     return None
 
 def human_bool(string):
+    """Convert string to bool value. Human-compliant."""
     return string.strip().lower() in 'yYoOjJ1'
 
 def human_words(string, expecteds):
+    """Convert string to list of expected words. Human-compliant."""
     for word in string.strip().split(','):
         word = word.strip().lower()
         if word not in expecteds:
@@ -68,6 +74,7 @@ def human_words(string, expecteds):
 human_tags = partial(human_words, expecteds=KNOWN_TAGS)
 
 def human_lang(string):
+    """Convert string to a language. Human-compliant."""
     for names in KNOWN_LANGS:
         if string.lower() in names:
             return names[0]
@@ -96,10 +103,11 @@ def generated(title, tags, *, lang=DEFAULT_LANG, date=None,
     return
 
 
-generated(
-    title=input('Title: '),
-    tags=', '.join(human_tags(input('TAGS: {}\ntags: '.format(', '.join(KNOWN_TAGS))))),
-    summary=input('summary: '),
-    lang=human_lang(input('lang[en/fr/lj]: ')),
-    is_translation = human_bool(input('translation [y/n]: ')),
-)
+if __name__ == "__main__":
+    generated(
+        title=input('Title: '),
+        tags=', '.join(human_tags(input('TAGS: {}\ntags: '.format(', '.join(KNOWN_TAGS))))),
+        summary=input('summary: '),
+        lang=human_lang(input('lang[en/fr/lj]: ')),
+        is_translation = human_bool(input('translation [y/n]: ')),
+    )
