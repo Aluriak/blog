@@ -7,37 +7,31 @@ This Pelican-Markdown plugin place space before titles.
 
 """
 
-
 import re
-from markdown.preprocessors import Preprocessor
+import markdown as md
+from markdown.inlinepatterns import Pattern
 from markdown.extensions import Extension
+from markdown.util import etree
 
 
-class SeparatorExtension(Extension):
-    def extendMarkdown(self, md, md_globals):
-        # Insert SeparatorPreprocessor instance into markdown preprocessors
-        md.preprocessors.add('separator', SeparatorPreprocessor(), '_begin')
+DEFAULT_SEPARATOR = '<br>\n'
+SEPARATOR = {  # level: separator
+    1: '<br>\n<br>\n<hr>\n',
+    2: '<br>\n',
+}
+TITLE_PATTERN = re.compile(r'^([#]+)')
 
 
-class SeparatorPreprocessor(Preprocessor):
+class TitleSepPattern(Pattern):
     """Add a constant separator before titles"""
+    def handleMatch(self, m):
+        print('STPLDE:', m.groups())
+        level = len(m.group(2))
+        el = etree.Element('')
+        el.text = SEPARATOR.get(level, DEFAULT_SEPARATOR) + line
+        return el
 
-    SEPARATOR = {  # level: separator
-        1: '<br>\n<hr>\n',
-        2: '<br>\n',
-    }
-    REG_TITLE = re.compile(r'^([#]+)')
 
-    def run(self, lines):
-        self.first = True
-        return [self.converted(line) for line in lines]
-
-    def converted(self, line) -> 'line':
-        match = SeparatorPreprocessor.REG_TITLE.match(line)
-        if match:
-            if self.first:
-                self.first = False
-                return line
-            level = len(match.groups(0)[0])
-            return SeparatorPreprocessor.SEPARATOR.get(level, '') + line
-        return line
+class TitleSepExtension(Extension):
+    def extendMarkdown(self, md, md_globals):
+        md.inlinePatterns.add('titleseppattern', TitleSepPattern(TITLE_PATTERN), '_end')
