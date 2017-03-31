@@ -11,8 +11,8 @@ from functools import partial
 
 
 KNOWN_TAGS = (
-    'python', 'tools', 'language', 'graph', 'bioinformatic', 'meta', 'bio',
-    'env', 'c/c++', 'rdf', 'opinion', 'stdlib', 'space', 'project',
+    'asp', 'bio', 'bioinformatic', 'c/c++', 'tools', 'language', 'graph', 'meta', 'project', 'python',
+    'env', 'rdf', 'opinion', 'stdlib', 'space', 'tuto',
 )
 KNOWN_LANGS = (('english', 'en'), ('français', 'fr'), ('lojban', 'lj'))
 DEFAULT_LANG = KNOWN_LANGS[0][0]
