@@ -102,6 +102,9 @@ PLUGINS = [
     # 'backreftranslate',  # add is_translation_of attribute to translated articles
     'tag_cloud',  # tag cloud
     *PLUGIN_LIQUID_TAG,  # insert images, videos,… properly
+    'section_number',
+    'filetime_from_git',
+    # 'render_math',
 
     # My plugins
 ]
