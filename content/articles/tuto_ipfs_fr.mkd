@@ -3,7 +3,7 @@ Date: 2017-01-06
 Modified: 2017-01-06
 Tags: internet, tutorial
 Authors: Lucas Bourneuf
-Summary: une aide à ceux qui se lancent dans le web permanent
+Summary: une présentation du web, et plus précisément d'une techno qui l'implémente
 Slug: ipfs
 lang: français
 translation: false
@@ -26,15 +26,14 @@ Pour reprendre la présentation :
 Ce que je traduis par :
 
     IPFS est un système de fichier distribué qui cherche à connecter tous les appareils
-    avec le même système de fichier. En un sens, c'est similaire au but original du Web,
-    mais IPFS est en réalité plus proche d'une unique flotte de serveurs BitTorrent
+    avec le même système de fichier. En un sens, c'est similaire au but initial du Web,
+    mais IPFS est en réalité plus proche d'une flotte de serveurs BitTorrent
     qui échange des objets git. IPFS pourrait bien devenir un nouveau sous-système majeur d'internet.
-    S'il est bien conçu, il pourrait complémenter ou remplacer HTTP.
+    S'il est bien conçu, il pourrait complémenter, voire remplacer HTTP.
 
 Je vais dans cet article expliciter un peu ces phrases,
 et montrer le principe de fonctionnement de la techno.
 
-NB: Il y a [de la littérature blanche](https://github.com/ipfs/papers/raw/master/ipfs-cap2pfs/ipfs-p2p-file-system.pdf) qui définit IPFS.
 
 
 # IPFS — Principes généraux
@@ -45,15 +44,25 @@ Un système de fichier, c'est une structure de donnée qui permet d'organiser, q
 en général organisés comme un arbre (on parle d'arborescence de fichiers,
 où des fichiers particuliers, appellés *dossiers*, peuvent contenir d'autres fichiers).
 
-Donc, intuitivement, si tout le monde utilise le même système de fichier,
-tout le monde peut accéder à tous les fichiers qui y sont présents. Ça pose des questions sur les accès concurrents, les modifications, les consensus,…
-bref, les problématiques de l'informatique distribuée.
 
 
 
 ### interplanétaire
-L'appellation *inter planétaire* véhicule une idée bien quantifiable : le système de fichier doit être *distribué*,
-c'est-à-dire :
+L'appellation *inter planétaire* véhicule une idée bien quantifiable :
+c'est un système de fichier partagé par tout le monde, c'est-à-dire que
+tout le monde peut accéder à tous les fichiers qui y sont présents.
+
+L'intérêt est grand : c'est une surcouche à internet, où l'on peut organiser
+les données de manière cohérente et potentiellement sans contrôle central.
+Ça peut permettre, par exemple, l'échange de fichier de manière privée ou non,
+à la manière de [keybase.io](https://privacyworkshop.wordpress.com/2017/02/28/what-is-keybase-io/).
+
+Mais cette échelle pose des questions sur les accès concurrents, les modifications, les consensus,…
+bref, les problématiques de l'informatique distribuée, très importantes
+en ces heures où les blockchain et autres techno distribuées prennent de l'ampleur.
+
+### systèmes de fichiers interplanétaire
+Le système de fichier doit être *distribué*, c'est-à-dire :
 
 - accessible : où que l'on soit sur le réseau, on peut avoir n'importe quelle ressource qui s'y trouve, indépendemment de l'endroit où elle a été publié initialement.
 - décentralisé : ajouter une ressource peut se faire n'importe quand et n'importe où dans le réseau, indépendamment d'instance centrales.
@@ -75,10 +84,16 @@ comment le mettre en place sur sa machine, et surtout, est bardé de lien
 pour être sûr qu'il soit possible de creuser le sujet.
 
 
+
+
 ## IPFS
 IPFS est annoncé comme un remplacement au HTTP.
 
-En effet, ce dernier a quelques lacunes qui sont vraiment gênantes,
+En effet, nous verrons qu'IPFS apporte des fonctionnalités
+qui complémentent voire sont équivalentes à celles d'HTTP, tout en changeant la
+philosophie même de l'accès aux données.
+
+HTTP a quelques lacunes qui sont vraiment gênantes,
 dont celle d'être *orienté-localisation*.
 
 Qu'est-ce que ça veux dire ?
@@ -88,10 +103,11 @@ je le fait pour accéder à son contenu. Pourtant, je m'y réfère en donnant un
 Et si le serveur est en panne ? Et si l'auteur du blog a changé la localisation de son blog ?
 Le contenu est perdu, et le retrouver nécessite, dans le premier cas, de chercher [une sauvegarde à la main](https://archive.org),
 ou, dans le second cas, de chercher le nouveau serveur qui abrite le blog (par exemple en envoyant un mail à l'auteur, ou en cherchant une info sur les réseaux sociaux).
-De la même manière, si le serveur est loin géographiquement, le temps de réponse est nul. Si nous sommes plusieurs dans le voisinage à vouloir accéder au blog, nous allons tous prendre du temps, là ou un seul transfert aurait suffit (et ensuite on se serait dispatché les données entre nous). Ce principe est d'ailleurs celui des [CDN](https://fr.wikipedia.org/wiki/Content_delivery_network). Qui posent aussi des problèmes, notamment par rapport à la vie privée.
+De la même manière, si le serveur est loin géographiquement, le temps de réponse est long. Si nous sommes plusieurs dans le voisinage à vouloir accéder au blog, nous allons tous prendre du temps, là ou un seul transfert aurait suffit (et ensuite on se serait dispatché les données entre nous). Ce principe est d'ailleurs celui des [CDN](https://fr.wikipedia.org/wiki/Content_delivery_network). Qui posent aussi des problèmes, notamment par rapport à la vie privée.
 
-Ça paraît un peu bête, non ? Vous vous fichez de savoir
-quel serveur contient le dernier article publié par le hollandais volant, vous voulez juste l'article.
+Ça paraît un peu bête, tout ça, non ? Vous vous fichez de savoir
+quel serveur contient le dernier article publié par le hollandais volant,
+*vous voulez juste l'article*.
 
 Maintenant, imaginons un système *orienté-contenu* :
 vous vous connectez à une porte d'entrée sur le système,
@@ -103,7 +119,7 @@ Si la ressource que vous demandez est peu populaire, il est probable qu'il se pa
 Mais, inversement, si elle est très demandée, tous les serveurs du système vont savoir où la chercher, voire l'auront gardée en mémoire pour aller plus vite.
 
 Dans le jargon IPFS, la porte d'entrée est une *gateway*, et l'ensemble des serveurs
-qui hébergent du contenu s'appelle la *swarm* (c'est une *flotte/nuée* de serveurs).
+qui hébergent du contenu s'appelle la *swarm* (c'est une *nuée*, ou *flotte* de serveurs).
 
 Les identifiants sont des *hashs* du contenu, c'est-à-dire une chaine de caratères
 qui peut être calculée à partir du contenu, mais qui ne permet pas l'opération inverse
@@ -113,7 +129,7 @@ Quelque soit la taille de la ressource (texte, vidéo, image),
 le hash possède toujours la même longueur, qui est assez petite (moins de cent caractères, souvent).
 Il y a des risques de collisions (deux ressources différentes obtiennent le même hash),
 mais une bonne fonction de hash (le programme qui calcule le hash à partir de la ressource)
-permet de rendre la probabilité d'une collision quasiment nulle.
+permet de rendre la probabilité d'une collision insignifiante.
 
 L'avantage du hash ? Si deux ressources sont identiques, elles auront le même hashs.
 Aux collisions près (considérées trop rares pour être plausibles),
@@ -124,19 +140,24 @@ Le hash permet donc de savoir très rapidement où sont les ressources, indépen
 
 Cela veux aussi dire que, si je demande une ressource particulière en utilisant son hash, et qu'on m'en fournie une autre (par erreur ou par malice),
 je le sais immédiatement : les hashs sont différents !
+Un système se basant sur les hashs préserve donc l'intégrité des données par défaut.
+Il n'est plus possible de corrompre une ressource à la volée.
 
 Ce détail peut sembler insignifiant, mais je rappelle qu'en HTTP, il est impossible de prouver la véracité d'une page.
 La norme [HTTPS](http://sebsauvage.net/comprendre/ssl/index.html) (S pour Secure),
-permet d'assurer la provenance d'une page… mais cela nécessite tout un système
-faisant notamment intervenir une autorité extérieure, [les autorités de certification](https://fr.wikipedia.org/wiki/Autorit%C3%A9_de_certification).
-Et encore une fois, notez la subtilité : la *provenance* d'une page.
+permet d'assurer la provenance d'une page (et cela nécessite tout un système
+faisant notamment intervenir une autorité extérieure, [les autorités de certification](https://fr.wikipedia.org/wiki/Autorit%C3%A9_de_certification)).
+
+Notez la subtilité : la *provenance* d'une page.
 HTTP est orienté localisation : la page vient donc du bon serveur, mais c'est tout ce qu'on peut garantir.
 
 Avec un système orienté-contenu comme IPFS, il devient difficile de perdre une page ou de recevoir une copie modifiée de la page voulue.
 L'intérêt de ce système est aussi dans sa résistance, par exemple en cas de catastrophe qui sépare le réseau en deux.
 Les ressources sont possiblement toujours présentes sur les deux sous-réseaux, et peuvent exister indépendemment l'un de l'autre. Lorsqu'elles seront réunifiées, les échanges reprendrons, et chaque côté pourra constater les mises à jour de l'autre. Tout ça est géré naturellement sans réel problème.
 
-Ce serait un remplacement potentiel aux messageries instantanées, au transferts de fichiers,…
+Un tel système pourrait être conçu, entre autre, pour la publication de contenu régulier (blog par exemple),
+ou pour de la messagerie, du transferts de fichiers,…
+Le principe étant très général, les applications le sont aussi.
 
 
 ### Parallèle avec git
@@ -167,7 +188,7 @@ une structure de donnée aussi drôle que complexe.
 
 ### Parallèle avec BitTorrent
 Maintenant que l'on sait comment référencer une ressource avec IPFS,
-la question est *comment on récupère une ressource sachant son identifiant ?*.
+la question est *comment récupère-t-on une ressource sachant son identifiant ?*.
 
 Et cette question, elle est plus simple qu'il n'y paraît, car on le fait tous les jours,
 parfois sans s'en apercevoir ; avec le [protocole BitTorrent](https://fr.wikipedia.org/wiki/BitTorrent%20(protocole)) par exemple.
@@ -199,12 +220,27 @@ Parce qu'il est utilisé par les réseaux illégaux d'échange de données cultu
 BitTorrent est en général confondu avec lesdits réseaux eux-même, en oubliant
 qu'une technologie n'est pas bonne ou mauvaise en soi.
 
-Pourtant, il est de plus en plus utilisé, et ce n'est pas un hasard.
+BitTorrent est, indépendemment des réseaux illégaux, de plus en plus utilisé ; et ce n'est pas un hasard.
 
 Du point du vue du particulier, une fois pris en main, c'est un vrai bonheur :
 le téléchargement peut être contrôlé (arrêt, limite de vitesse), ne peut pas être corrompu,
 et est d'autant plus rapide qu'il y a de gens qui le possèdent et le téléchargent,
 ce qui assure la disponibilité des données même (et surtout) en cas d'accès massif.
+
+<!-- Il est facile de publier des fichiers, et même de les partager. -->
+<!-- Imaginez : vous voulez envoyer vos photos de vacances à votre famille. Il y a quelques années, c'était globalement compliqué. -->
+<!-- Aujourd'hui, il y a des sites qui vous proposent d'héberger gratuitement vos photos en échange de récolte de données -->
+<!-- (qui les récupère, qui il y a sur les photos, etc.). -->
+<!-- Demain, peut-être qu'il paraîtra évident à tout le monde qu'il suffit de démarrer -->
+<!-- son client bittorrent, faire un fichier torrent qui référencie les photos à partager, -->
+<!-- et envoyer ce fichier torrent par mail à ceux qui veulent les photos (qui est tout peit, quelque soit la quantité de photos). -->
+
+<!-- Bonus 1 : vous ne donnez votre vie privée à personne à part à votre famille. -->
+
+<!-- Bonus 2 : même si vous avez un tout petit débit en upload (avec l'ADSL), -->
+<!-- vous irez vite. -->
+
+<!-- Bonus 3 : et tout ça, c'est l'objet d'un de mes projets perso, [Wagon](https://github.com/aluriak/Wagon). -->
 
 Concernant, les entreprises, vous êtes vous déjà demandé comment les
 gros éditeurs de jeux vidéos faisaient
@@ -446,3 +482,4 @@ J'attends donc impatiemment un point de vue mitigé sur la techno, avec les crit
 - [IPNS en quelques lignes](https://github.com/ipfs/examples/tree/master/examples/ipns)
 - l'instance stackexchange pour Etherum propose un [tag ipfs](https://ethereum.stackexchange.com/questions/tagged/ipfs)
 - [IPFS vs Swarm](https://github.com/ethersphere/go-ethereum/wiki/IPFS-&-SWARM), le second étant une alternative ; les deux pourraient bien se complémenter
+- [la littérature blanche](https://github.com/ipfs/papers/raw/master/ipfs-cap2pfs/ipfs-p2p-file-system.pdf) qui explique les bases d'IPFS
