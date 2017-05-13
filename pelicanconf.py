@@ -82,6 +82,15 @@ pass
 ################################################################################
 #                           PELICAN PLUGINS
 ################################################################################
+PLUGIN_LIQUID_TAG = [
+    'liquid_tags.img',
+    'liquid_tags.video',
+    # 'liquid_tags.youtube',
+    # 'liquid_tags.vimeo',
+    # 'liquid_tags.include_code',
+    # 'liquid_tags.notebook'
+]
+
 # Pelican plugins
 PLUGIN_PATHS = ['./pelican-plugins', './myplugins']
 PLUGINS = [
@@ -92,6 +101,7 @@ PLUGINS = [
     'github_activity',  # dynamic access to github activity
     # 'backreftranslate',  # add is_translation_of attribute to translated articles
     'tag_cloud',  # tag cloud
+    *PLUGIN_LIQUID_TAG,  # insert images, videos,… properly
 
     # My plugins
 ]
