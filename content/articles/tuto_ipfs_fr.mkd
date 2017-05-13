@@ -191,7 +191,8 @@ Maintenant que l'on sait comment référencer une ressource avec IPFS,
 la question est *comment récupère-t-on une ressource sachant son identifiant ?*.
 
 Et cette question, elle est plus simple qu'il n'y paraît, car on le fait tous les jours,
-parfois sans s'en apercevoir ; avec le [protocole BitTorrent](https://fr.wikipedia.org/wiki/BitTorrent%20(protocole)) par exemple.
+parfois sans s'en apercevoir ; avec le [protocole BitTorrent](https://fr.wikipedia.org/wiki/BitTorrent%20(protocole)) par exemple,
+et plus particulièrement via les [Distributed Hash Table](https://fr.wikipedia.org/wiki/Table_de_hachage_distribu%C3%A9e).
 
 Le torrent repose sur le principe du [peer-to-peer](http://sebsauvage.net/comprendre/p2p/index.html),
 et consiste simplement en l'idée qu'un contenu peut-être cassé en plusieurs segments indépendants,
