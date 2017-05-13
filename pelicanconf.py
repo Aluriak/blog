@@ -150,6 +150,13 @@ OUTER_WEB = 'outer web', 'wpexplorer', (
 # FEED_ATOM = 'feeds/atom.xml'
 # FEED_RSS = 'feeds/rss.xml'
 
+ARTICLE_URL = '{slug}'
+ARTICLE_SAVE_AS = '{slug}.html'
+ARTICLE_LANG_URL = '{slug}-{lang}.html'
+DRAFT_URL = 'drafts/{slug}.html'
+DRAFT_SAVE_AS = 'drafts/{slug}.html'
+DRAFT_LANG_URL = 'drafts/{slug}.html'
+
 
 
 ################################################################################
