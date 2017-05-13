@@ -129,17 +129,21 @@ LICENCE = 'WTFPL'  # LICENCE text, globally available
 #                           LINKS & FEEDS
 ################################################################################
 # Blogroll:   (font awesome icon, diplayed name, link)
-BLOG_LINKS = (
+BLOG_LINKS = 'blog', 'bars', (
     ('home',    'home',    '{}'.format(SITEURL)),
     ('th-list', 'archive', '{}/archives.html'.format(SITEURL)),
     ('link',    'links',   '{}/links'.format(SERVERURL)),
 )
-LINKS = (
-    ('github',  'github',  'http://github.com/aluriak'),
-    ('twitter', 'twitter', 'http://twitter.com/@aluriak'),
-    ('key',     'keybase', 'http://keybase.io/aluriak'),
+LINKS = 'links', 'external-link', (
+    ('github',  'github',  'https://github.com/aluriak'),
+    ('twitter', 'twitter', 'https://twitter.com/@aluriak'),
+    ('key',     'keybase', 'https://keybase.io/aluriak'),
+    ('cube',    'IPNS',    'https://bourneuf.net/ipns/Qmd4up4kjr8TNWc4rx6r4bFwpe6TJQjVVmfwtiv4q3FSPx')
     # ('stack-exchange',     'stackexchange', 'http://stackexchange.com/users/3696842/aluriak'),
     # ('windows',     'indexerror', 'http://indexerror.net/user/lucas'),
+)
+OUTER_WEB = 'outer web', 'wpexplorer', (
+    ('users',  'pro-domo',  'https://pro-domo.ddns.net/blog'),
 )
 
 
