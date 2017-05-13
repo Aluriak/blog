@@ -10,7 +10,7 @@ sys.path.append('.')
 ################################################################################
 AUTHOR = 'lucas bourneuf'
 SITENAME = "lucas/blog"
-SERVERURL = 'http://lucas.bourneuf.net'
+SERVERURL = 'https://lucas.bourneuf.net'
 SITEURL = '/blog'
 
 PATH = 'content'
