@@ -145,13 +145,13 @@ OUTER_WEB = 'outer web', 'wpexplorer', (
 )
 
 
-ARTICLE_URL = '{slug}'
+ARTICLE_URL = '{slug}.html'
 ARTICLE_SAVE_AS = '{slug}.html'
-ARTICLE_LANG_URL = '{slug}'
+ARTICLE_LANG_URL = '{slug}.html'
 ARTICLE_LANG_SAVE_AS = '{slug}.html'
-DRAFT_URL = 'drafts/{slug}'
+DRAFT_URL = 'drafts/{slug}.html'
 DRAFT_SAVE_AS = 'drafts/{slug}.html'
-DRAFT_LANG_URL = 'drafts/{slug}'
+DRAFT_LANG_URL = 'drafts/{slug}.html'
 DRAFT_LANG_SAVE_AS = '{slug}.html'
 
 
