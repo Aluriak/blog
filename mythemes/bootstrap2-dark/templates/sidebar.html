@@ -3,8 +3,8 @@
 
     <!--Blog pages-->
     {% if BLOG_LINKS %}
-    <li class="nav-header"><h4><i class="fa fa-bars fa-large fa-fw"></i>&nbsp;pages/</h4></li>
-        {% for icon, name, link in BLOG_LINKS %}
+    <li class="nav-header"><h4><i class="fa fa-{{BLOG_LINKS[1]}} fa-large fa-fw"></i>&nbsp;{{BLOG_LINKS[0]}}/</h4></li>
+        {% for icon, name, link in BLOG_LINKS[2] %}
             <li><a href="{{ link }}"><i class="fa fa-{{ icon }} fa-fw"></i>&nbsp;{{ name }}</a></li>
         {% endfor %}
     {% endif %}
@@ -21,14 +21,13 @@
 
 
 
-    <!--Other web locations-->
+    <!--Personal related web locations-->
     {% if LINKS %}
-    <li class="nav-header"><h4><i class="fa fa-external-link fa-large fa-fw"></i>&nbsp;www/</h4></li>
-        {% for icon, name, link in LINKS %}
+    <li class="nav-header"><h4><i class="fa fa-{{LINKS[1]}} fa-large fa-fw"></i>&nbsp;{{LINKS[0]}}/</h4></li>
+        {% for icon, name, link in LINKS[2] %}
             <li><a href="{{ link }}"><i class="fa fa-{{ icon }} fa-fw"></i>&nbsp;{{ name }}</a></li>
         {% endfor %}
     {% endif %}
-
 
 
     <li class="nav-header"><h4><i class="fa fa-tags icon-large fa-fw"></i>&nbsp;annotations/</h4></li>
@@ -45,6 +44,17 @@
                 </li>
             {% endfor %}
         <!--</ul>-->
+
+
+    <!--Other web locations-->
+    {% if OUTER_WEB %}
+    <li class="nav-header"><h4><i class="fa fa-{{OUTER_WEB[1]}} fa-large fa-fw"></i>&nbsp;{{OUTER_WEB[0]}}/</h4></li>
+        {% for icon, name, link in OUTER_WEB[2] %}
+            <li><a href="{{ link }}"><i class="fa fa-{{ icon }} fa-fw"></i>&nbsp;{{ name }}</a></li>
+        {% endfor %}
+    {% endif %}
+
+
 
 
 {% if SIDEBAR_CUSTOM %}
