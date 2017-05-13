@@ -20,7 +20,7 @@ DEFAULT_AUTHOR = 'Lucas Bourneuf'
 
 REGEX_SLUG = r'[a-zA-Z0-9-]'  # only characters allowed in URL of articles
 
-TEMPLATE_FILENAME = 'content/{}_{}.mkd'
+TEMPLATE_FILENAME = 'content/articles/{}_{}.mkd'
 TEMPLATE_CONTENT = """Title: {}
 Date: {}
 Modified: {}
@@ -34,8 +34,9 @@ status: draft
 
 # First title
 
-::: Python
+```python
     print('Here is Python !')
+```
 
 
 """
