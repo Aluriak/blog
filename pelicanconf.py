@@ -18,7 +18,7 @@ TIMEZONE = 'Europe/Paris'
 DEFAULT_LANG = 'en'
 DEFAULT_PAGINATION = None
 
-STATIC_PATHS = ['img/']
+STATIC_PATHS = ['images/']
 
 # Articles default metadata
 DEFAULT_METADATA = {
@@ -65,10 +65,15 @@ if THEME_NMNLIST in THEME:
 #                           MARKDOWN PLUGINS
 ################################################################################
 # Markdown plugins
-MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra',  # default values
-                 'myplugins.checkbox:CheckBoxExtension',
-                 'myplugins.separator:SeparatorExtension',
-                ]
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        'myplugins.checkbox:BoxExtension': {},
+        'myplugins.separator:TitleSepExtension': {},
+    }
+}
 
 # Markdown plugins setup
 pass
