@@ -14,21 +14,24 @@ from markdown.extensions import Extension
 from markdown.util import etree
 
 
-DEFAULT_SEPARATOR = '<br>\n'
+DEFAULT_SEPARATOR = '\n<br>'
 SEPARATOR = {  # level: separator
-    1: '<br>\n<br>\n<hr>\n',
-    2: '<br>\n',
+    1: '\n<br>ABRIBUS<br><br><hr>',
+    2: '\n<br>ABRIBUS<br><br>',
+    2: '\n<br>',
 }
-TITLE_PATTERN = re.compile(r'^([#]+)')
+TITLE_PATTERN = re.compile('\n' + r'([#]+)')
+TITLE_PATTERN = r'(#+)'
 
 
 class TitleSepPattern(Pattern):
     """Add a constant separator before titles"""
     def handleMatch(self, m):
+        print('#' * 100)
         print('STPLDE:', m.groups())
         level = len(m.group(2))
         el = etree.Element('')
-        el.text = SEPARATOR.get(level, DEFAULT_SEPARATOR) + line
+        el.text = SEPARATOR.get(level, DEFAULT_SEPARATOR)
         return el
 
 
