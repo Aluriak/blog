@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title }}{% endblock %}
+
 {% block content %}
 <section id="content">
         <article>
@@ -16,6 +17,11 @@
                 <div class="well">
                         {% include 'article_infos.html' %}
                 </div>
+{% if article.toc %}
+<!-- <div class="col-lg-3 hidden-xs hidden-sm"> -->
+    {{article.toc}}
+<!-- </div> -->
+{% endif %}
                 {{ article.content }}
                 </div><!-- /.entry-content -->
         </article>

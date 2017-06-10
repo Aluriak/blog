@@ -92,6 +92,7 @@ PLUGIN_LIQUID_TAG = [
 # Pelican plugins
 PLUGIN_PATHS = ['./pelican-plugins', './myplugins']
 PLUGINS = [
+    'pelican-toc',
     # 'autopages',  # page for authors, tags and categories
     # 'post_stats',  # compute statistics on articles
     'random_article',  # provides a randomly choosen article link
@@ -117,6 +118,7 @@ TAG_CLOUD_STEPS = 2  # number of different size
 TAG_CLOUD_MAX_ITEMS = 10
 TAG_CLOUD_SORTING = 'random'
 TAG_CLOUD_BADGE = True
+TOC = {'TOC_HEADERS': '^h[1-4]', 'TOC_RUN': 'false'}
 
 # DEACTIVATED PLUGINS DATA
 LICENCE = 'WTFPL'  # LICENCE text, globally available
