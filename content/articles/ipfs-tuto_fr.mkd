@@ -70,8 +70,8 @@ Le système de fichier doit être *distribué*, c'est-à-dire :
 Ces principes là sont très généraux, et sont à la base du web tel que conçu initialement,
 qui s'oppose aux technologies comme le minitel, ou aux services web centralisés comme facebook.
 C'est à la fois le manque d'éducation numérique et l'hégémonie de certaines entreprises
-sur certains usages du net qui ont complètement travestit le but initial,
-au point que certain parle de [minitel 2.0](https://archive.org/details/InternetLibreOuMinitel2.0).
+sur certains usages du net qui ont complètement dénaturé le but initial,
+au point que certains parlent de [minitel 2.0](https://archive.org/details/InternetLibreOuMinitel2.0).
 
 L'idée du web, c'est que l'information est possédée par les gens, là où,
 pour le minitel ou facebook, il y a un serveur central qui **centralise** l'information,
@@ -80,7 +80,7 @@ La centralisation est très décriée, notamment à cause de tous
 [les problèmes sociaux qu'elle implique](http://www.owni.fr/2011/08/10/benjamin-bayart-proteger-la-biodiversite-du-net/index.html).
 
 Sans rentrer dans le débat, ce tuto explique, en gros, le principe d'IPFS,
-comment le mettre en place sur sa machine, et surtout, est bardé de lien
+comment le mettre en place sur sa machine, et surtout, est bardé de liens
 pour être sûr qu'il soit possible de creuser le sujet.
 
 
@@ -186,6 +186,14 @@ il y a donc une arborescence de hash, nécessitant alors, en interne, la gestion
 une structure de donnée aussi drôle que complexe.
 
 
+#### Détails
+Pour être plus exact, ce qui donne vraiment sa nature *orienté-contenu* à git,
+c'est pas tant les hashs que les [*git objects*](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects).
+
+Cela explique la phrase de l'introduction à propos des git object :
+IPFS utilise le même principe pour adresser les fichiers par leur contenus.
+
+
 ### Parallèle avec BitTorrent
 Maintenant que l'on sait comment référencer une ressource avec IPFS,
 la question est *comment récupère-t-on une ressource sachant son identifiant ?*.
@@ -216,7 +224,7 @@ Une fois ce peer trouvé, la ressource sera téléchargée, et elle pourra vous
 être envoyée.
 
 
-#### Petit plaidoyer de BitTorrent
+#### Petit plaidoyer en faveur de BitTorrent
 Parce qu'il est utilisé par les réseaux illégaux d'échange de données culturelles,
 BitTorrent est en général confondu avec lesdits réseaux eux-même, en oubliant
 qu'une technologie n'est pas bonne ou mauvaise en soi.
@@ -405,7 +413,7 @@ j'ai écris un script bash qui :
 
 - ajoute le blog au démon ipfs qui tourne sur mon serveur
 - publie ledit blog sur ipns
-- s'assure que tous fonctionne correctement
+- s'assure que tout fonctionne correctement
 
 J'ai recopié le code en dessous. Il est possible qu'il finisse un jour sur
 mon dépôt github.
@@ -472,7 +480,7 @@ mais ces interrogations sont levées peu à peu, et rapidement il apparaît que 
 Mais bon, la communauté est encore jeune, la techno aussi ; il n'y a donc pas beaucoup de personne
 avec de l'expérience dans le domaine qui ont pu hausser la voix contre IPFS.
 J'attends donc impatiemment un point de vue mitigé sur la techno, avec les critiques de fond qui vont avec
-(sur le côté implémentation et partis pris, pas sur des questions subjectives).
+(sur le côté implémentation et parti pris, pas sur des questions subjectives).
 
 
 
