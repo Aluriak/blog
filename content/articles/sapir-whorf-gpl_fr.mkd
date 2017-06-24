@@ -1,6 +1,6 @@
 Title: L'hypothèse de Sapir-Whorf appliquée aux langages informatiques
-Date: 2017-05-21
-Modified: 2017-05-21
+Date: 2017-06-24
+Modified: 2017-06-24
 Tags: info, tools, opinion, language
 Authors: Lucas Bourneuf
 Summary: réflexion sur l'hypothèse par rapport aux langages informatiques
@@ -20,23 +20,24 @@ Ce post n'est pas à propos de l'HSW en tant que telle — je n'ai tout simpleme
 pas le niveau pour faire un état de l'art de la discussion à son propos —
 mais plutôt d'en discuter à travers un autre type de langage que les langages naturels : les langages de programmation (un sous-ensemble des langages informatiques).
 
-La question de l'application de l'HSW sur les langages informatique est intéressante, et pourtant,
+La question de l'application de l'HSW sur les langages informatiques est intéressante, et pourtant,
 je n'ai rien trouvé en dehors des références des [quelques lignes de wikipédia](https://en.wikipedia.org/wiki/Linguistic_relativity#Programming_languages).
 
 
 # Hypothèse de Sapir-Whorf
 ## Principes
 L'idée majeure de l'hypothèse de SW est que la langue détermine la pensée.
+En découle les deux principes suivants.
 
-1. s'il n'existe pas de mot pour un concept, il sera très difficile de le concevoir.
-2. À l'inverse, il existe beaucoup de mots pour décrire un concept bien connu.
+1. S'il n'existe pas de mot pour un concept, il sera très difficile de le concevoir.
+2. Il existe beaucoup de mots pour décrire un concept bien connu.
 
-### Discussion du second point
+### Discussion du second principe
 
 L'exemple souvent donné est la langue inuit, qui possède [une grande quantité de mots pour décrire la neige](http://www.encyclopediecanadienne.ca/fr/article/les-mots-en-inuktitut-pour-la-neige-et-la-glace/),
 là où en français et anglais nous n'en avons que quelques-uns, voire un seul.
 L'intérêt pour les inuits d'avoir autant de mots pour ce que nous jugeons être un seul concept est le même que celui
-qui nous a mené à avoir de nombreux synonymes dans beaucoup d'autres domaines.
+qui nous a mené à avoir de nombreux synonymes dans beaucoup d'autres domaines, l'argent par exemple.
 
 L'idée est qu'un synonyme ne convoie généralement pas exactement le même sens que le mot d'origine. Il apporte une variation.
 Du point de vue des inuits, dissocier les différents types de neige, avec leurs propriétés et leurs particularités,
@@ -47,11 +48,11 @@ sur sa dureté et sa consistance.
 
 Maintenant, est-il possible d'estimer l'importance d'un concept dans une culture donnée, en mesurant le nombre de mots qui s'y rapportent ?
 En français, on a de nombreux synonymes pour le travail, l'argent et le sexe. De fait, je me dit que oui, il y a peut-être un lien.
-(ce serait intéressant d'effectivement trouver les données sur quelques langues, pour voir un peu ce qui en sort, en terme de nombre de synonymes pour un concept.
+(Ce serait intéressant d'effectivement trouver les données sur quelques langues, pour voir un peu ce qui en sort, en terme de nombre de synonymes pour un concept.
 Un biais néanmoins évident est que beaucoup de synonymes utilisés ne sont pas académiques, donc probablement pas dans les dictionnaires de synonymes)
 
 
-### Discussion du premier point
+### Discussion du premier principe
 Le premier point est discutable, notamment avec l'exemple de langues construites,
 notamment *Toki Pona*, qui ne définit que 123 mots au total !
 Pour reprendre quelques lignes de [cet article](http://www.ulyces.co/roc-morin/peut-on-tout-dire-avec-la-langue-la-plus-concise-du-monde-toki-pona-ithkuil/), qui explique la philosophie du Toki Pona :
@@ -61,12 +62,12 @@ Pour reprendre quelques lignes de [cet article](http://www.ulyces.co/roc-morin/p
 > En lakota, un cheval est littéralement un « chien prodigieux ».  
 > Ces néologismes montrent la capacité cumulative de la langue, qui nous sert à décrire l’inconnu en faisant référence au connu.
 
-Donc, en considérant cela, le premier point énoncé plus haut est-il réellement pertinent ? Il semble effectivement que beaucoup de mots
-soient construit à partir d'autres.
-On parle souvent de mot-valises, avec l'exemple très connus de la *télévision* (vision de loin).
-Pour les plus récents (et très peu utilisés), l'académie française a trouvé *ordiphone*, (qui correspond à l'anglais *smartphone*), et *égographie* (de l'anglais *selfie*).
+Donc, en considérant cela, le premier principe de SW est-il réellement pertinent ? Il semble effectivement que beaucoup de mots
+soient construits à partir d'autres.
+On parle souvent de mot-valises, avec l'exemple très connu de la *télévision* (vision de loin).
+Pour les plus récents (et très peu utilisés), l'académie française a trouvé *ordiphone*, (qui correspond à l'anglais *smartphone*), et *égographie* (pour le mot anglais *selfie*).
 
-À ce point, il semble qu'on ai invalidé l'HSW, puisqu'on arrive très bien à concevoir quelque chose,
+À ce point, il semble qu'on ait invalidé l'HSW, puisqu'on arrive très bien à désigner quelque chose,
 même si le mot n'existe pas encore (par exemple en utilisant un mot-valise, mais au fond, c'est plus général : on a rencontré le loup avant d'avoir un mot qui le définissait).
 Sauf que c'est un poil plus compliqué que ça : l'HSW propose que l'absence d'un mot pour un concept rende ce dernier difficile à *concevoir*.
 
@@ -84,7 +85,7 @@ En considérant les concepts comme nœuds d'un gigantesque graphe, la langue est
 Une langue très orientée sur un domaine proposera de nombreux arcs liant les concepts de ce domaine,
 là où une langue plus pauvre en proposera moins.
 L'hypothèse de Sapir-Whorf est que la pensée chemine selon les arcs, et donc qu'une langue riche navigera plus facilement dans le graphe,
-sautera facilement d'un concept à un autre, et donc permettra des associations plus rapidement.
+sautera facilement d'un concept à un autre, et donc permettra des associations plus rapides.
 
 
 <!-- On différencie bien le «nommage de l'existant» et «la conception». -->
@@ -92,7 +93,7 @@ sautera facilement d'un concept à un autre, et donc permettra des associations 
 
 ## Dans la culture
 J'ai {v,l}u deux œuvres de SF qui parlent de HSW, et ce de manières complètement opposées
-(il y a plein d'autres œuvres, mais j'ai {l,v}u que celles-là).
+(il y a plein d'autres œuvres, mais je n'ai {l,v}u que celles-là).
 
 D'abord, [1984 de Georges Orwell](https://fr.wikipedia.org/wiki/1984%20(roman)), avec la *novlangue*, une langue simplifiée à l'extrême,
 qui, dans le contexte d'une guerre totale avec les pays voisins,
@@ -100,12 +101,12 @@ empêche la conception même de la notion d'opposition au gouvernement,
 en éliminant toute possibilité de *nuances* (par exemple avec l'absence de terme pour *mauvais* ; il y a juste *bon*, et son opposé *imbon*).
 
 Toute tentative de s'opposer au pouvoir en place, même partiellement et avec modération,
-deviens donc synonyme d'opposition totale, et donc de conspiration avec l'ennemi.
+devient synonyme d'opposition totale, et donc de conspiration avec l'ennemi.
 HSW n'y est pas explicitée directement, mais c'est une application directe de son principe :
-la langue formatte la population à la vision manichéenne,
-l'empêchant donc de s'extraire de l'idée qu'ils sont soit avec,
-soit contre le gouvernement, et les empêchent donc de formuler une quelconque
-critique envers le pouvoir.
+la langue formate les individus de la population à une vision manichéenne,
+les empêchant de s'extraire de l'idée qu'ils sont soit avec,
+soit contre le gouvernement, et par conséquent de formuler une quelconque
+critique envers le pouvoir en place.
 
 Dans un tout autre genre, le film
 <!-- [*Arrival*]({filename}/articles/revue-du-film-premier-contact_fr.mkd) -->
@@ -119,30 +120,31 @@ de nos langues naturelles.
 
 
 
-# Application aux GPL
+# Application aux languages de programmation
 Maintenant que l'on a quasiment compris ce qu'était l'Hypothèse de Sapir-Whorf
-appliqués aux langages naturels, nous pouvons nous poser la question de son application
-aux langages de programmation ?
+appliquée aux langages naturels, nous pouvons nous poser la question de son application
+aux langages informatiques.
+(au sens de *General Purpose Language* (GPL), comme les langages de programmation)
 
 
 ## Pourquoi les langages de programmation ?
 Les langages de programmation occupent une place particulière dans le spectre des langages.
 D'abord, ils sont construits, comme le lojban ou le toki pona. Mais, contrairement à ces derniers, et contrairement aux langages naturels,
 les langages de programmation ne sont pas construits pour une discussion d'humain à humain, mais d'humain à ordinateur.
-(on aborde pas ici les langages informatique en général, qui incluent les langages visant la discussion de ordinateur à ordinateur)
+(on n'aborde pas ici les langages informatique en général, qui incluent les langages visant la discussion de ordinateur à ordinateur)
 
 Cette différence est colossale, car les langages de programmation ne sont pas conçus pour parler d'émotions ou d'idées,
 mais pour aborder la méthode et la formalisation de manière non-ambiguë.
 C'est leur caractéristique première, et c'est ce que qui explique leur diversité : diversité des méthodes, diversité des besoins.
 
 Les langages de programmation sont moins nombreux que les langues naturelles,
-mais d'un autre côté, on ne créé pas beaucoup de nouvelles langues naturelles.
+mais d'un autre côté, on ne crée pas beaucoup de nouvelles langues naturelles.
 (alors que des languages de programmation… eh bien, on en trouve des [pelletées chaque année](https://cs.stackexchange.com/a/458/64054))
 
 Les langages de programmation sont facilement étudiables,
 car leur histoire est gravée dans la littérature.
 Des phylogénies des langages existent. On sait lesquels ont
-[influencés](ethw.org/Past%20programming%20languages%20and%20their%20influences%20on%20today's%20languages%20and%20programming%20paradigms) lesquels,
+[influencé](ethw.org/Past%20programming%20languages%20and%20their%20influences%20on%20today's%20languages%20and%20programming%20paradigms) lesquels,
 on sait les diviser en [paradigmes](https://fr.wikipedia.org/wiki/Paradigme%20(programmation)),
 [par types](https://en.wikipedia.org/wiki/List%20of%20programming%20languages%20by%20type).
 
@@ -208,8 +210,8 @@ C'est souvent motivé par l'optimisation ou la recherche de bug.
 C'est selon moi purement technique, mais il y aura quelque chose à en retirer.
 
 ### Principes
-De nombreux projets en informatiques bénéficient d'une réécriture complète dans un autre langage.
-Par exemple, on peut vouloir d'abord écrire le projet dans un langage haut-niveau (développement rapide, perfs mauvaises),
+De nombreux projets en informatique bénéficient d'une réécriture complète dans un autre langage.
+Par exemple, on peut vouloir d'abord écrire le projet dans un langage haut-niveau (développement et debug rapide),
 puis une fois qu'on a montré que l'architecture était bonne, on lance la réécriture dans le langage final (développement lent, perfs maximales).
 C'est ce qu'on appelle du *prototypage*.
 
@@ -221,13 +223,14 @@ d'autres idées, et va éviter certains bugs. De fait, d'autres bugs plus coriac
 
 C'est cette idée qui m'a motivé à écrire [pydelaunator](https://github.com/aluriak/pydelaunator),
 la version (quasiment) full-python de [delaunator](https://github.com/aluriak/delaunator), une triangulation de delaunay en C++ avec un binding python.
-Avec pydelaunator, j'ai certes dû réimplémenter la majorité des features de la librairie originelle,
+Avec pydelaunator, j'ai certes dû réimplémenter la majorité des fonctionnalités de la librairie originelle,
 mais j'ai surtout découvert de nombreux bugs et cas limites auxquels je n'avais jamais pensé, expliquant certains comportements erratiques de delaunator.
 
 F.P. Brooks ira plus loin en faisant remarquer que, en suivant la logique de la règle des [90/10](https://fr.wikipedia.org/wiki/Principe%20de%20Pareto),
 une fois la version haut-niveau implémentée, il suffirait de réécrire seulement quelques parties bien choisies
 du code dans un langage bas-niveau pour retrouver l'essentiel des performances, sans trop sacrifier la maintenabilité.
-Je vous renvoie vers [le blog pro-domo](https://pro-domo.ddns.net/blog/optimiser-son-code-python.html) pour un exemple de programme Python qui gagne en perf avec un peu de C,
+Je vous renvoie vers [le blog pro-domo](https://pro-domo.ddns.net/blog/optimiser-son-code-python.html)
+pour un exemple de programme Python qui gagne en performance avec un peu de C,
 avec des conclusions qui font écho à celles de F.P. Brooks.
 
 
@@ -304,18 +307,18 @@ est la complémentarité desdits langages.
 
 Un seul langage, fût-il généraliste, ne peut pas tout faire *efficacement*.
 Si vous devez exécuter un script dans une page web, utiliser javascript est un réflexe.
-Personne n'imaginerais envoyer du Python, en espérant que le navigateur cible sache quoi en faire.
+Personne n'imaginerait envoyer du Python, en espérant que le navigateur cible sache quoi en faire.
 (là, ça touche à l'écosystème plus qu'au langage, mais les deux sont intimement liés)
 
-De la même manière, beaucoup de projet s'interfacent avec des langages aux objectifs et concepts très différents,
+De la même manière, beaucoup de projets s'interfacent avec des langages aux objectifs et concepts très différents,
 employant l'un ou l'autre selon leur pertinence.
 Par exemple, en robotique, on utilise souvent [Prolog](https://fr.wikipedia.org/wiki/Prolog), pour gérer les bases de données,
 ou [Ada](https://www.adacore.com/adaanswers/about/ada) pour les codes dont la fiabilité est critique.
 
-Comme autres exemples, on peut citer beaucoup de logiciels de bureautique intègrent
+Comme autres exemples, on peut remarquer que beaucoup de logiciels de bureautique intègrent
 un système de scripting, exploitant un langage de script pour manipuler les données.
-De leur côté, les developpeurs web utilisent souvent trois langages en étroite synergie, PHP, SQL et javascript.
-Et personnellement, dans plusieurs de mes projets, je met en synergie un langage procédural/OO
+De leur côté, les développeurs web utilisent souvent trois langages en étroite synergie, PHP, SQL et javascript.
+Et personnellement, dans plusieurs de mes projets, je mets en synergie un langage procédural/OO
 avec un langage logique pour pouvoir rapidement implémenter et modifier des idées.
 
 L'idée développée ici est qu'un projet doit remplir plusieurs objectifs,
@@ -324,7 +327,7 @@ et que souvent ces objectifs sont tous simples à atteindre… s'ils sont abord�
 D'où la nécessité, pour se simplifier la vie, de faire
 **intervenir plusieurs langages avec des paradigmes différents**,
 qui vont chacun de leur côté remplir une partie du cahier des charges et
-ensuite travailler ensembles pour aggréger les résultats.
+ensuite travailler ensemble pour aggréger les résultats.
 
 
 ### Croiser les paradigmes
@@ -346,7 +349,7 @@ Et tout cela, des fois que vous m'ayez pas déjà vu venir,
 c'est **exactement** ce que définit l'hypothèse de Sapir-Whorf.
 
 De la même manière que les inuit ont une vingtaine de mots pour la neige,
-COBOL possède au moins [une centaine de mot-clefs réservés](http://www.math-cs.gordon.edu/courses/cs323/COBOL/COBOL-reservedWords.html).
+[COBOL](https://fr.wikipedia.org/wiki/COBOL), un langage de programmation né en 1959, a pour caractéristique notoire la possession d'au moins [une centaine de mot-clefs réservés](http://www.math-cs.gordon.edu/courses/cs323/COBOL/COBOL-reservedWords.html).
 
 Sont-ce réellement des facteurs déterminants pour la pensée ?
 Ou finalement juste un choix d'implémentation d'un même paradigme ?
@@ -358,8 +361,10 @@ De la même manière, la langue inuit n'est peut-être pas si différente du fra
 Pour l'inuit et le COBOL, proposer autant de mots correspond probablement plus
 à une **nécessité utilitaire** plutôt qu'une véritable manière de penser.
 
-Nous pouvons alors penser que l'hypothèse de Sapir-Whorf porte sur la notion de *paradigme*,
-et non sur celle du vocabulaire ou de la grammaire.
+Nous pouvons alors penser que l'hypothèse de Sapir-Whorf porte
+sur la notion de *paradigme*, et non sur celle du vocabulaire
+(le cas des mots inuits ou du COBOL) ou de la grammaire
+(aggregation des lettres pour former des mots, conjugaison,…).
 
 
 # Conclusion
@@ -369,14 +374,14 @@ vous retournent le cerveau quand vous apprenez à les utiliser pour la première
 Qu'après les avoir appris, vous continuez à intégrer des notions que leurs paradigmes
 apportent, même lorsque vous utilisez d'autres langages, dans d'autres contextes.
 
-Les paradigmes inhabituels de programmations change votre manière de voir le code,
+Les paradigmes «inhabituels» de programmations change votre manière de voir le code,
 d'appréhender les problèmes que vous rencontrez. C'est d'ailleurs la raison principale pour laquelle
-les devs expérimentés encouragent les plus jeunes à apprendre des langages différents de ce qu'ils connaissent déjà.
+les développeurs expérimentés encouragent les débutants à apprendre des langages employant des paradigmes différents de ceux qu'ils connaissent déjà.
 
 Il ne s'agit pas juste du savoir que tel ou tel problème peut être résolu de telle ou telle manière.
 Résoudre un problème, quand on débute, c'est se poser la question
 *comment je code ça dans le langage X ?*
-Mais, à la lumières d'autres langages, d'autres paradigmes, de l'expérience,
+Mais, à la lumière d'autres langages, d'autres paradigmes, de l'expérience,
 cette question devient *comment je résouds ça, conceptuellement ?*
 La manière de penser la réponse est profondément ancrée dans votre conception,
 qui transcende le langage que vous devez utiliser dans l'instant.
@@ -384,7 +389,7 @@ C'est dans un second temps que vous pensez à *comment implémenter mon concept 
 <!-- (et c'est à ce moment qu'on hurle parce que X est limité… sauf si (eq X lisp) :p ) -->
 
 
-De part leur statut particulier, les langages construits à destination des
+De par leur statut particulier, les langages construits à destination des
 interactions humain-machine posent des questions sur l'application de l'hypothèse
 de Sapir-Whorf sur nos langages naturels.
 
@@ -409,10 +414,10 @@ la [non-ambiguïté](https://fr.wikipedia.org/wiki/Lojban) de la grammaire et le
 Peut-être ne sont-ce finalement que des variations mineures du seul
 et unique paradigme que l'humanité utilise aujourd'hui pour s'exprimer.
 
-C'est selon moi l'idée du *Arrival*, avec le langage hectapodes ;
+C'est selon moi l'idée du *Arrival*, avec le langage hectapode ;
 c'est là que ce film touche du doigt l'hypothèse de Sapir-Whorf,
 encore plus profondémment et encore plus justement que ne le fait *1984* avec la novlangue.
-Peut-être que la représentation ce nouveau paradigme n'est pas parfaite,
+Peut-être que la représentation de ce nouveau paradigme n'est pas parfaite,
 qu'il s'agit en réalité d'une énième variation du même paradigme.
 Peut-être que la non-linéarité de l'écriture n'est pas un paradigme.
 
@@ -431,6 +436,14 @@ Mais qu'importe, l'idée est là : **les hectapodes apportent un paradigme, pas 
 J'utilise indifféremment *langue* et *langage*. C'est mal, je sais.
 Mais je suis pas linguiste, donc je ne sais pas de quoi je parle.
 Et en plus c'est les autres qui ont commencé avec *langages de programmation*.
+
+#### À l'envers
+On pourrais imaginer appliquer l'hypothèse Sapir-Whorf dans le sens inverse.
+Est-ce qu'un japonais apprenant l'anglais, et donc
+(j'en suis pas sûr à 100%, mais vous avez l'idée) la notion d'aggregation
+de lettres pour former des mots, connaît une transcendance ? Si non,
+alors l'aggrégation de lettres pour former des mots n'est pas un paradigme
+dans le langage.
 
 #### Deep web
 - le japonais propose toute une cohorte de mots (plus encore qu'en français) pour parler de [la pluie](http://www.sakura-house.com/blog/fr/2012/09/07/pourquoi-50-facons-de-dire-dire-pluie-en-japonais/). Cela fait écho avec la *nécessité utilitaire* abordée plus haut.
