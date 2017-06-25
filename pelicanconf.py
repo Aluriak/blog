@@ -139,12 +139,15 @@ LINKS = 'links', 'external-link', (
     ('github',  'github',  'https://github.com/aluriak'),
     ('twitter', 'twitter', 'https://twitter.com/@aluriak'),
     ('key',     'keybase', 'https://keybase.io/aluriak'),
-    ('cube',    'IPNS',    'https://bourneuf.net/ipns/Qmd4up4kjr8TNWc4rx6r4bFwpe6TJQjVVmfwtiv4q3FSPx')
+    ('cube',    'IPNS',    'https://bourneuf.net/ipns/Qmd4up4kjr8TNWc4rx6r4bFwpe6TJQjVVmfwtiv4q3FSPx'),
+
     # ('stack-exchange',     'stackexchange', 'http://stackexchange.com/users/3696842/aluriak'),
-    # ('windows',     'indexerror', 'http://indexerror.net/user/lucas'),
+    ('windows',     'indexerror', 'http://indexerror.net/user/lucas'),
+    ('envelope',    'mail',       'mailto:{{firstname}}.{{lastname}}@laposte.net'),
 )
 OUTER_WEB = 'outer web', 'wpexplorer', (
-    ('users',  'pro-domo',  'https://pro-domo.ddns.net/blog'),
+    ('user-circle',  'pro-domo',  'https://pro-domo.ddns.net/blog'),
+    ('user-circle',  'dridk',     'http://dridk.labsquare.org/'),
 )
 
 
