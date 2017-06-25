@@ -492,3 +492,4 @@ J'attends donc impatiemment un point de vue mitigé sur la techno, avec les crit
 - l'instance stackexchange pour Etherum propose un [tag ipfs](https://ethereum.stackexchange.com/questions/tagged/ipfs)
 - [IPFS vs Swarm](https://github.com/ethersphere/go-ethereum/wiki/IPFS-&-SWARM), le second étant une alternative ; les deux pourraient bien se complémenter
 - [la littérature blanche](https://github.com/ipfs/papers/raw/master/ipfs-cap2pfs/ipfs-p2p-file-system.pdf) qui explique les bases d'IPFS
+- les [web seeds](http://techie-buzz.com/how-to/what-are-web-seeds-bittorrent.html) du protocole bittorrent permettent d'allier ftp et torrent
