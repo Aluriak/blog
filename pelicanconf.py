@@ -104,6 +104,7 @@ PLUGINS = [
     'section_number',
     'filetime_from_git',
     # 'render_math',
+    'sitemap',  # cf SITEMAP var
 
     # My plugins
 ]
@@ -165,3 +166,17 @@ LOAD_CONTENT_CACHE = False
 DELETE_OUTPUT_DIRECTORY = True
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
+FEED_ATOM = 'feeds/atom.xml'
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'monthly',
+        'indexes': 'monthly',
+        'pages': 'monthly'
+    }
+}
