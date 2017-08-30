@@ -11,7 +11,8 @@ status: published
 
 
 # Introduction
-I recently came accross an [*r/space* post](https://www.reddit.com/r/space/comments/690is5/if_you_design_it_right_more_than_400_planets_fit/), featuring a very interesting series of [blog articles from Sean Raymond](https://planetplanet.net/the-ultimate-solar-system/), astronomer at Bordeaux (France).
+I recently came accross an [*r/space* post](https://www.reddit.com/r/space/comments/690is5/if%20you%20design%20it%20right%20more%20than%20400%20planets%20fit/),
+featuring a very interesting series of [blog articles from Sean Raymond](https://planetplanet.net/the-ultimate-solar-system/), astronomer at Bordeaux (France).
 The goal is simple : as an engineer of a very advanced civilization, to design a solar system that maximize the amount of habitable space, while remaining stable for billion years.
 
 Working with published articles and an iterative improvements of the starting design,
