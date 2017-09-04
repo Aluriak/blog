@@ -19,7 +19,7 @@ Peut-on voir les constellations, comme on les voit en vrai ?
 Intuitivement, vu que l'univers connu est rendu dans son intégralité, on a envie de répondre oui. Mais sur le moment, j'ai eu un gros doute.
 Et si pour des raisons de perfs ou de complexité d'implémentation, Space Engine ne permettait pas de regarder le ciel depuis mon fauteuil ?
 
-Nous avons regardé ensemble, et oui : on voit bien les constellations !
+Nous avons donc regardé ensemble, et oui : on voit bien les constellations !
 
 Suis un petit descriptif des tests que j'ai fait après coups, lorsque j'ai eu le temps de me repencher sur la question
 et de sortir inkscape du placard (il m'a fallut du temps pour trouver comment faire des lignes droites et blanches !).
@@ -211,14 +211,40 @@ Braquons maintenant nos objectifs vers les Ourses :
 </a>
 
 Clairement, on retrouve bien les motifs, mais ils sont un peu dérangés.
-La Grande Ourse ressemblent maintenant à un héron en vol, et la Petite Ourse… dors bizarrement.
+La Grande Ourse ressemblent maintenant à un héron en vol, et la Petite Ourse…
+dort [un peu comme Sid dans l'Age de Glace](https://www.youtube.com/watch?v=fqgxRcGkTSo).
 
 On retrouve aussi deux morceaux du Dragon, qui manquaient sur le plan précédent.
 
 
 
-# Conclusion
+# Et après ?
 Non seulement space engine permet d'explorer le ciel connu, mais en plus il rend très bien compte de son évolution,
 comme montré avec l'exemple du triangle d'été qui n'est pas visible toute la nuit en hiver.
 
-La prochaine fois que je parlerais de space engine, ce sera pour montrer quelques endroits sympa que j'y ai trouvé.
+Changer de point de vue est aussi possible, et avec un peu de travail on
+retrouve les constellations quoique légèrement déformées, ici depuis Altaïr.
+
+Il serais sympa d'automatiser un peu tout ça, pour essayer de déterminer
+*Earth II* de Battlestar Galactica. Dans cette série (SPOILER),
+en s'appuyant sur douze constellations,
+les humains trouvent la planète annoncée par une prophétie.
+Malheureusement irradiée et inhabitable,
+ils cherchent dans les environs et trouvent une seconde planète, habitable celle-ci,
+qui se trouve être notre Terre.
+(Peut-être la première planète est-elle Mars ?)
+
+Toujours est-il que, la deuxième planète ayant les même douze constellations,
+elles ne doivent donc pas être bien loin l'une de l'autre.
+
+Il serais intéressant de calculer un score de similarité entre les différents
+dessins de constellation, et décider quel espace autour de la Terre
+voit les constellations changer au minimum (et de trouver une planète habitable
+dans cet espace… paf ! On a trouvé la planète radioactive annoncée par
+la prophétie de Battlestar Galactica).
+
+Cela étant dit, vu comme la recherche par la communauté de Space Engine
+de planète où la vie humaine est possible
+est active mais néanmoins infructueuse, il est possible que, même si quelques
+système conservent à peu près les traits de douze de nos constellations,
+aucun d'entre eux n'hébergent de planète où la vie ait été possible.
