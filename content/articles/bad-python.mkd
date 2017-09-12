@@ -13,9 +13,11 @@ status: draft
 
 # In the standard library
 ## global mess
-Just look at collections: `defaultdict` is in snakecase without underscores. `ChainMap` and `Counter` are in mixed case.
+Just look at collections: `defaultdict` is in snakecase without underscores.
+`ChainMap` and `Counter` are in mixed case.
 And `functools.lru_cache` happens to be in snake case,
-while the full `logging` lib is in camel case (because inherited from java world, instead of having a more pythonic interface).
+while the full `logging` lib is in camel case
+(because inherited from java world).
 
 You know what ? I just ran [an experience](https://github.com/Aluriak/cases-in-stdlib) about it, and plot it as lattice just for you:
 
@@ -23,13 +25,15 @@ TODO
 
 
 My point is: the global API of stdlib is a mess.
+It's so a mess it looks like Common Lisp.
+
 I'm a huge fan of Ada's way, where all libs are carefully standardized,
 so you find little or no surprise in them.
 Well, the fact that the language itself is case insensitive helps a little, but it anyway reach
 a global coherence that i didn't find anywhere else
 (maybe [racket](https://racket-lang.org/) ? I didn't dig more about it yet).
 
-Python is somewhere between Common Lisp and Ada, but IMHO far closer from CL.
+Python is somewhere between Common Lisp and Ada, but IMHO closer to CL.
 
 
 ## csv
@@ -38,8 +42,8 @@ This module is a huge success to me: simple, efficient, rich.
 With the notable exception of a very annoying behavior: record separator is hardcoded.
 
 In other words, if you want your lines (*record* is the formal name) to be separated by a specific character,
-for instance the standard [*record separator*](), you just can't.
-You are stuck with `\n`/`\r`.
+for instance the standard [*record separator*](https://en.wikipedia.org/wiki/Delimiter#ASCII_delimited_text),
+you just can't. You are stuck with `\n`/`\r`.
 
 Or you have to use a tierce-party library. So much for the *battery-included*.
 
@@ -47,7 +51,7 @@ At least, [the documentation](https://docs.python.org/2.7/library/csv.html#csv.D
 
 > The reader is hard-coded to recognise either '\r' or '\n' as end-of-line, and ignores lineterminator. This behavior may change in the future.
 
-Well, instead of writing this, i guess i could work on it.
+Well, instead of writing this, i guess i could work on a PEP for that.
 
 
 ## functools
@@ -74,7 +78,8 @@ Seriously ? In python **3.6** ?
 This is because islice is coded by CPython in C, directly, without consideration for the Python side. Like `str.split` few versions ago.
 
 And you know what ? As far as i understand the problem, [PEP 362](https://www.python.org/dev/peps/pep-0362/) should have fixed the problem.
-But we get an error with `islice`.
+But we still get an error with `islice`, and so you can't set its second
+and third parameters with `functools.partial`.
 
 
 # About base types
@@ -105,6 +110,10 @@ They are just missing. The only way to get them is to use Lisp or derivatives.
 ## exec
 
 ## importlib
+
+## ast
+Complicated. Some projects like [redbaron]() works on it, in order to bypass
+the `ast` module itself.
 
 
 # In the language
@@ -163,13 +172,15 @@ for item in items with item*2 as post_treated_bigitem:
 ```
 
 ## inlined except
-In the continuity of the [EAFP philosophy](), which is prefered over LBYL in Python,
-and to avoid the full try..except blocks:
+In the continuity of the [*Easier to Ask Forgiveness than Permission* philosophy](https://docs.python.org/3/glossary.html#term-eafp),
+which is prefered over *Look Before You're Leap* in Python, and to avoid the full try..except blocks:
 
 ```python
 t = 1, 2, 3
 print(t[4])  except IndexError: print('Nope !')
 ```
+
+This was proposed in a [now rejected PEP](https://www.python.org/dev/peps/pep-0463/).
 
 
 ## errors
