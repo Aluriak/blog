@@ -9,5 +9,4 @@ pelican-plugins/
 srv.pid
 themes/
 venv/
-blog-content/
-content
+content/
