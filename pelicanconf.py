@@ -136,10 +136,11 @@ BLOG_LINKS = 'blog', 'bars', (
     ('link',    'links',   '{}/links'.format(SERVERURL)),
 )
 LINKS = 'links', 'external-link', (
-    ('github',  'github',  'https://github.com/aluriak'),
-    ('twitter', 'twitter', 'https://twitter.com/@aluriak'),
-    ('key',     'keybase', 'https://keybase.io/aluriak'),
-    ('cube',    'IPNS',    'https://bourneuf.net/ipns/Qmd4up4kjr8TNWc4rx6r4bFwpe6TJQjVVmfwtiv4q3FSPx'),
+    ('github',  'github',   'https://github.com/aluriak'),
+    ('twitter', 'twitter',  'https://twitter.com/@aluriak'),
+    ('twitter', 'mastodon', 'https://mamot.fr/@aluriak'),
+    ('key',     'keybase',  'https://keybase.io/aluriak'),
+    ('cube',    'IPNS',     'https://bourneuf.net/ipns/Qmd4up4kjr8TNWc4rx6r4bFwpe6TJQjVVmfwtiv4q3FSPx'),
 
     # ('stack-exchange',     'stackexchange', 'http://stackexchange.com/users/3696842/aluriak'),
     ('windows',     'indexerror', 'http://indexerror.net/user/lucas'),
@@ -173,7 +174,7 @@ FEED_ATOM = 'feeds/atom.xml'
 SITEMAP = {
     'format': 'xml',
     'priorities': {
-        'articles': 0.5,
+        'articles': 0.8,
         'indexes': 0.5,
         'pages': 0.5
     },
