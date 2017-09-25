@@ -28,9 +28,9 @@ Tags: {}
 Authors: {}
 Summary: {}
 Slug: {}
-lang: {}
-translation: {}
-status: draft
+Lang: {}
+Translation: {}
+Status: draft
 
 # First title
 
