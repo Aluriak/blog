@@ -67,9 +67,13 @@ MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.codehilite': {'css_class': 'highlight'},
         'markdown.extensions.extra': {},
-        'markdown.extensions.meta': {},
-        'myplugins.checkbox:BoxExtension': {},
-        'myplugins.separator:TitleSepExtension': {},
+        'markdown.extensions.meta': {},  # metadata
+        'markdown.extensions.abbr': {},  # allows abbreviations
+        'markdown.extensions.smart_strong': {},  # better handling of *
+        # 'markdown.extensions.nl2br': {},  # newline to break -> awful
+        'markdown.extensions.toc': {'anchorlink': True},  # table of content
+        'myplugins.checkbox:BoxExtension': {},  # fontawesome boxes
+        # 'myplugins.separator:TitleSepExtension': {},  # do not work
     }
 }
 
@@ -92,7 +96,7 @@ PLUGIN_LIQUID_TAG = [
 # Pelican plugins
 PLUGIN_PATHS = ['./pelican-plugins', './myplugins']
 PLUGINS = [
-    'pelican-toc',
+    # 'pelican-toc',
     # 'autopages',  # page for authors, tags and categories
     # 'post_stats',  # compute statistics on articles
     'random_article',  # provides a randomly choosen article link
@@ -115,6 +119,7 @@ GITHUB_URL = 'https://github.com/aluriak.atom'
 GITHUB_ACTIVITY_FEED = 'https://github.com/aluriak.atom'
 GITHUB_ACTIVITY_MAX_ENTRIES = 5
 RANDOM = 'random.html'  # random_article: name of the generated HTML page
+SECTION_NUMBER_MAX = 5
 TAG_CLOUD_STEPS = 2  # number of different size
 TAG_CLOUD_MAX_ITEMS = 10
 TAG_CLOUD_SORTING = 'random'
