@@ -74,6 +74,8 @@ MARKDOWN = {
         'markdown.extensions.toc': {'anchorlink': True},  # table of content
         'myplugins.checkbox:BoxExtension': {},  # fontawesome boxes
         # 'myplugins.separator:TitleSepExtension': {},  # do not work
+        'genhtml': {'headers_dir': 'genhtml-headers-footers',
+                    'footers_dir': 'genhtml-headers-footers'},  # write markdown with python
     }
 }
 
