@@ -16,6 +16,7 @@ TIMEZONE = 'Europe/Paris'
 DEFAULT_LANG = 'en'
 DEFAULT_PAGINATION = None
 
+READERS = {'htm': None}  # htm pages are not processed, but html are.
 STATIC_PATHS = ['images/']
 
 # Articles default metadata
