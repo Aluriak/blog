@@ -1,4 +1,4 @@
 feedparser==5.2.1
 Markdown==2.6.8
 pelican==3.7.1
-genhtml-markdown==1.0.7
+genhtml-markdown>=1.0.8
