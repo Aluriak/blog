@@ -167,7 +167,7 @@ ARTICLE_LANG_SAVE_AS = '{slug}.html'
 DRAFT_URL = 'drafts/{slug}.html'
 DRAFT_SAVE_AS = 'drafts/{slug}.html'
 DRAFT_LANG_URL = 'drafts/{slug}.html'
-DRAFT_LANG_SAVE_AS = '{slug}.html'
+DRAFT_LANG_SAVE_AS = 'drafts/{slug}.html'
 
 
 
