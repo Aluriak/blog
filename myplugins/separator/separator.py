@@ -20,8 +20,9 @@ SEPARATOR = {  # level: separator
     2: '\n<br>ABRIBUS<br><br>',
     2: '\n<br>',
 }
-TITLE_PATTERN = re.compile('\n' + r'([#]+)')
-TITLE_PATTERN = r'(#+)'
+TITLE_PATTERN = re.compile(r'^([#]+)')
+assert TITLE_PATTERN.match('# test')
+assert TITLE_PATTERN.match('## test')
 
 
 class TitleSepPattern(Pattern):
@@ -29,12 +30,13 @@ class TitleSepPattern(Pattern):
     def handleMatch(self, m):
         print('#' * 100)
         print('STPLDE:', m.groups())
+        exit(1)
         level = len(m.group(2))
         el = etree.Element('')
         el.text = SEPARATOR.get(level, DEFAULT_SEPARATOR)
         return el
 
 
-class TitleSepExtension(Extension):
+class TitlesepExtension(Extension):
     def extendMarkdown(self, md, md_globals):
         md.inlinePatterns.add('titleseppattern', TitleSepPattern(TITLE_PATTERN), '_end')
