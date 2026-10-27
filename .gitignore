@@ -1,12 +1,13 @@
 *.vim
-writing/
 __pycache__/
+content/
 develop_server.sh
 fabfile.py
+old
 output/
-pelican.pid
 pelican-plugins/
+pelican.pid
 srv.pid
 themes/
 venv/
-content/
+writing/
