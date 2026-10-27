@@ -10,6 +10,7 @@ AUTHOR = 'lucas bourneuf'
 SITENAME = "lucas/blog"
 SERVERURL = 'https://lucas.bourneuf.net'
 SITEURL = '/blog'
+LANDING_URL = SERVERURL + '/landing/'  # lien « autres outils » de l'en-tête
 
 PATH = 'content'
 TIMEZONE = 'Europe/Paris'
@@ -33,7 +34,6 @@ DEFAULT_DATE_FORMAT = '%d/%m/%Y'
 # }
 
 
-PIWIK = False  # not used as url holder, but uniquely as enable/disable piwik
 
 
 ################################################################################
@@ -42,7 +42,7 @@ PIWIK = False  # not used as url holder, but uniquely as enable/disable piwik
 # theme names
 THEME_SIMPLE = 'simple'
 THEME_NMNLIST = 'nmnlist'
-THEME_BOOTSTRAP = 'bootstrap2-dark'
+THEME_VERT = 'vert-sur-noir'
 THEME_FUU = 'fuu'
 
 # paths
@@ -50,8 +50,7 @@ THEMES_PATH = 'themes/'
 MY_THEMES_PATH = 'mythemes/'
 
 # this is the one
-# THEME = THEMES_PATH + THEME_BOOTSTRAP
-THEME = MY_THEMES_PATH + THEME_BOOTSTRAP
+THEME = MY_THEMES_PATH + THEME_VERT
 # THEME = MY_THEMES_PATH + THEME_FUU
 # THEME = MY_THEMES_PATH + THEME_NMNLIST
 

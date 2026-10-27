@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block lang %}{{ article.lang }}{% endblock %}
+{% block title %}{{ article.title | striptags }} · {{ SITENAME }}{% endblock %}
+{% block meta %}
+  {% set resume = (article.summary | striptags | trim | truncate(200)) %}
+  <meta name="description" content="{{ resume }}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{ SITENAME }}">
+  <meta property="og:title" content="{{ article.title | striptags }}">
+  <meta property="og:description" content="{{ resume }}">
+  {% if SERVERURL %}<meta property="og:url" content="{{ SERVERURL }}{{ SITEURL if SITEURL.startswith('/') else '' }}/{{ article.url }}">{% endif %}
+  <meta property="article:published_time" content="{{ article.date.isoformat() }}">
+{% endblock %}
+{% block content %}
+<article>
+  <h1 class="titre-article"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h1>
+  {% include 'article_infos.html' %}
+  {{ article.content }}
+</article>
+{% endblock %}

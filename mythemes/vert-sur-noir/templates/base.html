@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{% block lang %}{{ DEFAULT_LANG }}{% endblock %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <meta name="author" content="{{ AUTHOR }}">
+  {% block meta %}<meta name="description" content="{{ SITESUBTITLE | default(SITENAME) }}">{% endblock %}
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-awesome.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/blog.css">
+  {% if FEED_ATOM %}
+  <link rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ATOM }}" title="{{ SITENAME }} (atom)">
+  {% endif %}
+  {% if FEED_RSS %}
+  <link rel="alternate" type="application/rss+xml" href="{{ SITEURL }}/{{ FEED_RSS }}" title="{{ SITENAME }} (rss)">
+  {% endif %}
+</head>
+<body>
+
+<header class="entete">
+  {# « lucas/blog » : le dernier segment en vert #}
+  {% set nom = SITENAME.rsplit('/', 1) %}
+  <a class="nom" href="{{ SITEURL }}/index.html">{% if nom | length == 2 %}{{ nom[0] }}/<span>{{ nom[1] }}</span>{% else %}{{ SITENAME }}{% endif %}</a>
+  <nav>
+    <a href="{{ SITEURL }}/archives.html">archive</a>
+    {% if FEED_ATOM %}<a href="{{ SITEURL }}/{{ FEED_ATOM }}">atom</a>{% endif %}
+    {% if LANDING_URL %}<a href="{{ LANDING_URL }}">‹ autres outils</a>{% endif %}
+  </nav>
+</header>
+
+<div class="page">
+  <main id="content">
+    {% block content %}{% endblock %}
+  </main>
+  <aside id="sidebar">
+    {% include 'sidebar.html' %}
+  </aside>
+</div>
+
+<footer class="pied">
+  {{ AUTHOR }}{% if LICENCE %} · licence {{ LICENCE }}{% endif %}
+  · généré par <a href="https://getpelican.com">pelican</a>
+</footer>
+
+</body>
+</html>

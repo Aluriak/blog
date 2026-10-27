@@ -8,7 +8,7 @@ Tentative de blog, publié sur [le net](http://lucas.bourneuf.net/blog).
 
 ## My themes
 - fuu: tentative de créer un thème from scratch.
-- bootstrap2-dark: copie modifiée du thème du même nom.
+- vert-sur-noir: le thème du blog, issu de bootstrap2-dark (sans bootstrap désormais).
 - nmnlist: copie modifiée du thème du même nom.
 
 ## My plugins

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block lang %}{{ page.lang }}{% endblock %}
+{% block title %}{{ page.title | striptags }} · {{ SITENAME }}{% endblock %}
+{% block content %}
+<article>
+  <h1 class="titre-article">{{ page.title }}</h1>
+  {{ page.content }}
+</article>
+{% endblock %}

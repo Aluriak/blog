@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}archive · {{ SITENAME }}{% endblock %}
+{% block content %}
+<section class="archives">
+  <h1 class="titre-article">Archive</h1>
+  {% for annee, articles in dates | groupby(attribute='date.year') | reverse %}
+  <h2>{{ annee }}</h2>
+  <ul>
+    {% for article in articles | sort(attribute='date', reverse=true) %}
+    <li><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+      <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</section>
+{% endblock %}
