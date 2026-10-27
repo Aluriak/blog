@@ -11,7 +11,7 @@ import re
 import markdown as md
 from markdown.inlinepatterns import Pattern
 from markdown.extensions import Extension
-from markdown.util import etree
+import xml.etree.ElementTree as etree
 
 
 DEFAULT_SEPARATOR = '\n<br>'
@@ -38,5 +38,5 @@ class TitleSepPattern(Pattern):
 
 
 class TitlesepExtension(Extension):
-    def extendMarkdown(self, md, md_globals):
-        md.inlinePatterns.add('titleseppattern', TitleSepPattern(TITLE_PATTERN), '_end')
+    def extendMarkdown(self, md):
+        md.inlinePatterns.register(TitleSepPattern(TITLE_PATTERN), 'titleseppattern', 1)

@@ -12,4 +12,13 @@ Tentative de blog, publié sur [le net](http://lucas.bourneuf.net/blog).
 - nmnlist: copie modifiée du thème du même nom.
 
 ## My plugins
-TODO
+- checkbox : `[ ]` et `[x]` deviennent des cases à cocher fontawesome.
+- separator : séparateur de titre (désactivé).
+- liquid_avant_html : traite les balises liquid (`{% img %}`, `{% video %}`) avant les blocs HTML,
+  pour que celles placées dans `<center>…</center>` soient converties, comme avec l'ancien plugin.
+
+## Installation
+
+    python -m venv venv && venv/bin/pip install -r requirements.txt
+
+Les plugins viennent des paquets pip `pelican-*` (l'ancien dépôt pelican-plugins n'est plus nécessaire).

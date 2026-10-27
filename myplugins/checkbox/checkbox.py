@@ -9,7 +9,7 @@ import re
 import markdown as md
 from markdown.inlinepatterns import Pattern
 from markdown.extensions import Extension
-from markdown.util import etree
+import xml.etree.ElementTree as etree
 
 
 BOX_PATTERN = r'\[([ a-z-]+)\]'
@@ -43,5 +43,5 @@ class BoxPattern(Pattern):
 
 
 class BoxExtension(Extension):
-    def extendMarkdown(self, md, md_globals):
-        md.inlinePatterns.add('boxpattern', BoxPattern(BOX_PATTERN), '_end')
+    def extendMarkdown(self, md):
+        md.inlinePatterns.register(BoxPattern(BOX_PATTERN), 'boxpattern', 1)

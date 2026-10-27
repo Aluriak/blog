@@ -70,13 +70,8 @@ MARKDOWN = {
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},  # metadata
         'markdown.extensions.abbr': {},  # allows abbreviations
-        'markdown.extensions.smart_strong': {},  # better handling of *
-        # 'markdown.extensions.nl2br': {},  # newline to break -> awful
         'markdown.extensions.toc': {'anchorlink': True},  # table of content
         'myplugins.checkbox:BoxExtension': {},  # fontawesome boxes
-        # 'myplugins.separator:TitleSepExtension': {},  # do not work
-        'genhtml': {'headers_dir': 'genhtml-headers-footers',
-                    'footers_dir': 'genhtml-headers-footers'},  # write markdown with python
     }
 }
 
@@ -87,33 +82,15 @@ pass
 ################################################################################
 #                           PELICAN PLUGINS
 ################################################################################
-PLUGIN_LIQUID_TAG = [
-    'liquid_tags.img',
-    'liquid_tags.video',
-    # 'liquid_tags.youtube',
-    # 'liquid_tags.vimeo',
-    # 'liquid_tags.include_code',
-    # 'liquid_tags.notebook'
-]
-
-# Pelican plugins
-PLUGIN_PATHS = ['./pelican-plugins', './myplugins']
+# Plugins : paquets pip pelican-* (voir requirements.txt), l'ancien dépôt pelican-plugins
+# n'est plus maintenu. Plus disponibles : random_article, github_activity, section_number.
+LIQUID_TAGS = ['img', 'video']  # insert images, videos,… properly
+PLUGIN_PATHS = ['./myplugins']
 PLUGINS = [
-    # 'pelican-toc',
-    # 'autopages',  # page for authors, tags and categories
-    # 'post_stats',  # compute statistics on articles
-    'random_article',  # provides a randomly choosen article link
-    # 'global_license',  # provides a global constant, containing the license text
-    'github_activity',  # dynamic access to github activity
-    # 'backreftranslate',  # add is_translation_of attribute to translated articles
-    'tag_cloud',  # tag cloud
-    *PLUGIN_LIQUID_TAG,  # insert images, videos,… properly
-    'section_number',
-    # 'filetime_from_git',
-    # 'render_math',
-    'sitemap',  # cf SITEMAP var
-
-    # My plugins
+    'pelican.plugins.liquid_tags',
+    'liquid_avant_html',  # balises liquid aussi dans les blocs HTML (<center>…), cf. myplugins
+    'pelican.plugins.tag_cloud',  # tag cloud
+    'pelican.plugins.sitemap',  # cf SITEMAP var
 ]
 
 
