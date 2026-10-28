@@ -1,4 +1,3 @@
-from __future__ import unicode_literals
 import sys
 sys.path.append('.')
 
@@ -14,7 +13,9 @@ LANDING_URL = SERVERURL + '/landing/'  # lien « autres outils » de l'en-tête
 
 PATH = 'content'
 TIMEZONE = 'Europe/Paris'
-DEFAULT_LANG = 'en'
+DEFAULT_LANG = 'fr'
+# langue des articles (Lang: français…) → code pour <html lang> (cf. create_content.py)
+LANG_CODES = {'français': 'fr', 'english': 'en', 'lojban': 'jbo', 'lj': 'jbo'}
 DEFAULT_PAGINATION = None
 
 READERS = {'htm': None}  # htm pages are not processed, but html are.
@@ -25,38 +26,13 @@ DEFAULT_METADATA = {
         'status': 'draft',
 }
 
-# date format (could be set by langage)
 DEFAULT_DATE_FORMAT = '%d/%m/%Y'
-# DATE_FORMATS = {
-    # 'en': '%d/%m/%Y',
-    # 'fr': '%d/%m/%Y',
-    # 'lj': '%d/%m/%Y',
-# }
-
-
 
 
 ################################################################################
-#                               THEMES
+#                               THEME
 ################################################################################
-# theme names
-THEME_SIMPLE = 'simple'
-THEME_NMNLIST = 'nmnlist'
-THEME_VERT = 'vert-sur-noir'
-THEME_FUU = 'fuu'
-
-# paths
-THEMES_PATH = 'themes/'
-MY_THEMES_PATH = 'mythemes/'
-
-# this is the one
-THEME = MY_THEMES_PATH + THEME_VERT
-# THEME = MY_THEMES_PATH + THEME_FUU
-# THEME = MY_THEMES_PATH + THEME_NMNLIST
-
-# themes config
-if THEME_NMNLIST in THEME:
-    HIDE_DATE = False
+THEME = 'mythemes/vert-sur-noir'
 
 
 ################################################################################
@@ -74,9 +50,6 @@ MARKDOWN = {
     }
 }
 
-# Markdown plugins setup
-pass
-
 
 ################################################################################
 #                           PELICAN PLUGINS
@@ -93,20 +66,16 @@ PLUGINS = [
 ]
 
 
-# ACTIVATED PLUGINS DATA
-GITHUB_URL = 'https://github.com/aluriak.atom'
-GITHUB_ACTIVITY_FEED = 'https://github.com/aluriak.atom'
-GITHUB_ACTIVITY_MAX_ENTRIES = 5
-RANDOM = 'random.html'  # random_article: name of the generated HTML page
-SECTION_NUMBER_MAX = 5
+PLUGINS += [
+    'chargement_differe',  # images chargées à l'approche de l'écran (loading="lazy")
+]
+
 TAG_CLOUD_STEPS = 2  # number of different size
 TAG_CLOUD_MAX_ITEMS = 10
 TAG_CLOUD_SORTING = 'random'
 TAG_CLOUD_BADGE = True
-TOC = {'TOC_HEADERS': '^h[1-4]', 'TOC_RUN': 'false'}
 
-# DEACTIVATED PLUGINS DATA
-LICENCE = 'WTFPL'  # LICENCE text, globally available
+LICENCE = 'WTFPL'  # affichée dans le pied de page
 
 
 
@@ -115,6 +84,8 @@ LICENCE = 'WTFPL'  # LICENCE text, globally available
 ################################################################################
 # Blogroll:   (icône font awesome 6, nom affiché, lien)
 # icône : « house » (style solid), ou avec le style : « brands github », « regular square »
+# lien : une adresse, ou (utilisateur, domaine) pour un mail, assemblé dans la page par
+# javascript (les robots qui cherchent « mailto: » et « @ » dans le HTML ne le voient pas)
 BLOG_LINKS = 'blog', 'bars', (
     ('house',      'home',    '{}'.format(SITEURL)),
     ('table-list', 'archive', '{}/archives.html'.format(SITEURL)),
@@ -122,14 +93,10 @@ BLOG_LINKS = 'blog', 'bars', (
 )
 LINKS = 'links', 'arrow-up-right-from-square', (
     ('brands github',   'github',   'https://github.com/aluriak'),
-    ('brands twitter',  'twitter',  'https://twitter.com/@aluriak'),
     ('brands mastodon', 'mastodon', 'https://mamot.fr/@aluriak'),
     ('brands keybase',  'keybase',  'https://keybase.io/aluriak'),
     ('cube',            'IPNS',     'https://bourneuf.net/ipns/Qmd4up4kjr8TNWc4rx6r4bFwpe6TJQjVVmfwtiv4q3FSPx'),
-
-    # ('brands stack-exchange', 'stackexchange', 'http://stackexchange.com/users/3696842/aluriak'),
-    ('brands windows',  'indexerror', 'http://indexerror.net/user/lucas'),
-    ('envelope',        'mail',       'mailto:{{firstname}}.{{lastname}}@laposte.net'),
+    ('envelope',        'mail',     ('lucas.bourneuf', 'laposte.net')),
 )
 OUTER_WEB = 'outer web', 'brands wpexplorer', (
     ('circle-user',  'pro-domo',  'https://pro-domo.ddns.net/blog'),
@@ -149,12 +116,12 @@ DRAFT_LANG_SAVE_AS = 'drafts/{slug}.html'
 
 
 ################################################################################
-#                           OTHER & WEIRD
+#                           DIVERS
 ################################################################################
 LOAD_CONTENT_CACHE = False
 DELETE_OUTPUT_DIRECTORY = True
-# Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+RELATIVE_URLS = True  # en local ; adresses complètes pour la publication (publishconf.py)
+DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'authors', 'archives', '404']
 FEED_ATOM = 'feeds/atom.xml'
 SITEMAP = {
     'format': 'xml',

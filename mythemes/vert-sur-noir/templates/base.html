@@ -43,5 +43,12 @@
   · généré par <a href="https://getpelican.com">pelican</a>
 </footer>
 
+<script>
+  // liens mail : adresse écrite à l'envers dans la page, remise à l'endroit ici
+  for (const a of document.querySelectorAll('a[data-u]')) {
+    const endroit = s => [...s].reverse().join('');
+    a.href = 'mailto:' + endroit(a.dataset.u) + '@' + endroit(a.dataset.d);
+  }
+</script>
 </body>
 </html>

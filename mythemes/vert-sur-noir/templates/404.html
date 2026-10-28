@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}page introuvable · {{ SITENAME }}{% endblock %}
+{% block content %}
+<article>
+  <h1 class="titre-article">Page introuvable</h1>
+  <p>Cette page n'existe pas, ou plus. Les articles sont tous dans
+    l'<a href="{{ SITEURL }}/archives.html">archive</a>.</p>
+</article>
+{% endblock %}

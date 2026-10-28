@@ -6,7 +6,12 @@
 <h4>{{ icone(liens[1]) }}{{ liens[0] }}/</h4>
 <ul>
   {% for icon, name, link in liens[2] %}
+  {% if link is string %}
   <li><a href="{{ link }}">{{ icone(icon) }}{{ name }}</a></li>
+  {% else %}
+  {# (utilisateur, domaine) : écrits à l'envers, l'adresse est assemblée par le script de base.html #}
+  <li><a href="#" data-u="{{ link[0] | reverse }}" data-d="{{ link[1] | reverse }}">{{ icone(icon) }}{{ name }}</a></li>
+  {% endif %}
   {% endfor %}
   {{ caller() if caller }}
 </ul>

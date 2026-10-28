@@ -7,13 +7,12 @@ Tentative de blog, publié sur [le net](http://lucas.bourneuf.net/blog).
 
 
 ## My themes
-- fuu: tentative de créer un thème from scratch.
 - vert-sur-noir: le thème du blog, issu de bootstrap2-dark (sans bootstrap désormais).
-- nmnlist: copie modifiée du thème du même nom.
 
 ## My plugins
 - checkbox : `[ ]` et `[x]` deviennent des cases à cocher fontawesome.
 - separator : séparateur de titre (désactivé).
+- chargement_differe : `loading="lazy"` sur les images et iframes des articles.
 - liquid_avant_html : traite les balises liquid (`{% img %}`, `{% video %}`) avant les blocs HTML,
   pour que celles placées dans `<center>…</center>` soient converties, comme avec l'ancien plugin.
 
