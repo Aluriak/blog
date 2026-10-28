@@ -4,7 +4,7 @@
 <h1 class="titre-article">Annotations</h1>
 <ul class="liste-tags">
   {% for tag, articles in tags | sort(attribute='0') %}
-  <li><a href="{{ SITEURL }}/{{ tag.url }}"><i class="fa fa-tag"></i> {{ tag }}</a> <span class="compte">({{ articles | count }})</span></li>
+  <li><a href="{{ SITEURL }}/{{ tag.url }}"><i class="fa-solid fa-tag"></i> {{ tag }}</a> <span class="compte">({{ articles | count }})</span></li>
   {% endfor %}
 </ul>
 {% endblock %}

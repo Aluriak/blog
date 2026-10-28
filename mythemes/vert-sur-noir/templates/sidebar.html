@@ -1,10 +1,12 @@
-{# chaque groupe : (titre, icône, ((icône, nom, lien), …)) dans pelicanconf.py #}
+{# chaque groupe : (titre, icône, ((icône, nom, lien), …)) dans pelicanconf.py ;
+   icône Font Awesome 6 : « house » (style solid) ou « brands github », « regular square »… #}
+{% macro icone(nom) %}{% set n = nom.split() %}<i class="fa-{{ n[0] if n | length > 1 else 'solid' }} fa-{{ n[-1] }} fa-fw"></i>{% endmacro %}
 {% macro groupe(liens) %}
 {% if liens %}
-<h4><i class="fa fa-{{ liens[1] }} fa-fw"></i>{{ liens[0] }}/</h4>
+<h4>{{ icone(liens[1]) }}{{ liens[0] }}/</h4>
 <ul>
   {% for icon, name, link in liens[2] %}
-  <li><a href="{{ link }}"><i class="fa fa-{{ icon }} fa-fw"></i>{{ name }}</a></li>
+  <li><a href="{{ link }}">{{ icone(icon) }}{{ name }}</a></li>
   {% endfor %}
   {{ caller() if caller }}
 </ul>
@@ -12,17 +14,17 @@
 {% endmacro %}
 
 {% call groupe(BLOG_LINKS) %}
-  {% if FEED_ATOM %}<li><a href="{{ SITEURL }}/{{ FEED_ATOM }}"><i class="fa fa-rss fa-fw"></i>atom</a></li>{% endif %}
-  {% if FEED_RSS %}<li><a href="{{ SITEURL }}/{{ FEED_RSS }}"><i class="fa fa-rss fa-fw"></i>rss</a></li>{% endif %}
+  {% if FEED_ATOM %}<li><a href="{{ SITEURL }}/{{ FEED_ATOM }}"><i class="fa-solid fa-rss fa-fw"></i>atom</a></li>{% endif %}
+  {% if FEED_RSS %}<li><a href="{{ SITEURL }}/{{ FEED_RSS }}"><i class="fa-solid fa-rss fa-fw"></i>rss</a></li>{% endif %}
 {% endcall %}
 
 {{ groupe(LINKS) }}
 
 {% if tag_cloud %}
-<h4><i class="fa fa-tags fa-fw"></i>annotations/</h4>
+<h4><i class="fa-solid fa-tags fa-fw"></i>annotations/</h4>
 <ul>
   {% for tag in tag_cloud %}
-  <li class="tag-{{ tag[1] }}"><a href="{{ SITEURL }}/{{ tag[0].url }}"><i class="fa fa-tag fa-fw"></i>{{ tag[0] }}</a>
+  <li class="tag-{{ tag[1] }}"><a href="{{ SITEURL }}/{{ tag[0].url }}"><i class="fa-solid fa-tag fa-fw"></i>{{ tag[0] }}</a>
     {% if TAG_CLOUD_BADGE and tag | length > 2 %}<span class="compte">({{ tag[2] }})</span>{% endif %}</li>
   {% endfor %}
 </ul>

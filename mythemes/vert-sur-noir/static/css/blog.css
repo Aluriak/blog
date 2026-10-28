@@ -141,7 +141,7 @@ abbr[title] { text-decoration: underline dotted; cursor: help; }
   color: var(--discret);
 }
 .infos .tags { display: flex; flex-wrap: wrap; gap: .2em .8em; }
-.infos .fa { color: #666; margin-right: .2em; }
+.infos [class*="fa-"] { color: #666; margin-right: .2em; }
 
 /* liste d'articles (accueil, tags) */
 .liste-articles { list-style: none; padding: 0; margin: 0; }
@@ -191,10 +191,10 @@ abbr[title] { text-decoration: underline dotted; cursor: help; }
   text-transform: uppercase;
   letter-spacing: .03em;
 }
-#sidebar h4 .fa { margin-right: .3em; }
+#sidebar h4 [class*="fa-"] { margin-right: .3em; }
 #sidebar ul { list-style: none; padding: 0; margin: 0; }
 #sidebar li { padding: .1em 0; }
-#sidebar li .fa { margin-right: .3em; }
+#sidebar li [class*="fa-"] { margin-right: .3em; }
 #sidebar .tag-1 { font-size: 1.05em; }
 #sidebar .tag-2 { font-size: .9em; }
 #sidebar .compte { color: var(--discret); font-size: .85em; }

@@ -113,26 +113,27 @@ LICENCE = 'WTFPL'  # LICENCE text, globally available
 ################################################################################
 #                           LINKS & FEEDS
 ################################################################################
-# Blogroll:   (font awesome icon, diplayed name, link)
+# Blogroll:   (icône font awesome 6, nom affiché, lien)
+# icône : « house » (style solid), ou avec le style : « brands github », « regular square »
 BLOG_LINKS = 'blog', 'bars', (
-    ('home',    'home',    '{}'.format(SITEURL)),
-    ('th-list', 'archive', '{}/archives.html'.format(SITEURL)),
-    ('link',    'links',   '{}/links'.format(SERVERURL)),
+    ('house',      'home',    '{}'.format(SITEURL)),
+    ('table-list', 'archive', '{}/archives.html'.format(SITEURL)),
+    ('link',       'links',   '{}/links'.format(SERVERURL)),
 )
-LINKS = 'links', 'external-link', (
-    ('github',  'github',   'https://github.com/aluriak'),
-    ('twitter', 'twitter',  'https://twitter.com/@aluriak'),
-    ('twitter', 'mastodon', 'https://mamot.fr/@aluriak'),
-    ('key',     'keybase',  'https://keybase.io/aluriak'),
-    ('cube',    'IPNS',     'https://bourneuf.net/ipns/Qmd4up4kjr8TNWc4rx6r4bFwpe6TJQjVVmfwtiv4q3FSPx'),
+LINKS = 'links', 'arrow-up-right-from-square', (
+    ('brands github',   'github',   'https://github.com/aluriak'),
+    ('brands twitter',  'twitter',  'https://twitter.com/@aluriak'),
+    ('brands mastodon', 'mastodon', 'https://mamot.fr/@aluriak'),
+    ('brands keybase',  'keybase',  'https://keybase.io/aluriak'),
+    ('cube',            'IPNS',     'https://bourneuf.net/ipns/Qmd4up4kjr8TNWc4rx6r4bFwpe6TJQjVVmfwtiv4q3FSPx'),
 
-    # ('stack-exchange',     'stackexchange', 'http://stackexchange.com/users/3696842/aluriak'),
-    ('windows',     'indexerror', 'http://indexerror.net/user/lucas'),
-    ('envelope',    'mail',       'mailto:{{firstname}}.{{lastname}}@laposte.net'),
+    # ('brands stack-exchange', 'stackexchange', 'http://stackexchange.com/users/3696842/aluriak'),
+    ('brands windows',  'indexerror', 'http://indexerror.net/user/lucas'),
+    ('envelope',        'mail',       'mailto:{{firstname}}.{{lastname}}@laposte.net'),
 )
-OUTER_WEB = 'outer web', 'wpexplorer', (
-    ('user-circle',  'pro-domo',  'https://pro-domo.ddns.net/blog'),
-    ('user-circle',  'dridk',     'http://dridk.labsquare.org/'),
+OUTER_WEB = 'outer web', 'brands wpexplorer', (
+    ('circle-user',  'pro-domo',  'https://pro-domo.ddns.net/blog'),
+    ('circle-user',  'dridk',     'http://dridk.labsquare.org/'),
 )
 
 
