@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
   <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
   <meta name="author" content="{{ AUTHOR }}">
   {% block meta %}<meta name="description" content="{{ SITESUBTITLE | default(SITENAME) }}">{% endblock %}
@@ -25,7 +26,7 @@
   <nav>
     <a href="{{ SITEURL }}/archives.html">archive</a>
     {% if FEED_ATOM %}<a href="{{ SITEURL }}/{{ FEED_ATOM }}">atom</a>{% endif %}
-    {% if LANDING_URL %}<a href="{{ LANDING_URL }}">‹ autres outils</a>{% endif %}
+    {% if LANDING_URL %}<a href="{{ LANDING_URL }}">‹ menu</a>{% endif %}
   </nav>
 </header>
 
@@ -39,16 +40,9 @@
 </div>
 
 <footer class="pied">
-  {{ AUTHOR }}{% if LICENCE %} · licence {{ LICENCE }}{% endif %}
+  {{ AUTHOR }}{% if LICENCE %} · licence {% if LICENCE_URL %}<a href="{{ LICENCE_URL }}">{{ LICENCE }}</a>{% else %}{{ LICENCE }}{% endif %}{% endif %}
   · généré par <a href="https://getpelican.com">pelican</a>
 </footer>
 
-<script>
-  // liens mail : adresse écrite à l'envers dans la page, remise à l'endroit ici
-  for (const a of document.querySelectorAll('a[data-u]')) {
-    const endroit = s => [...s].reverse().join('');
-    a.href = 'mailto:' + endroit(a.dataset.u) + '@' + endroit(a.dataset.d);
-  }
-</script>
 </body>
 </html>

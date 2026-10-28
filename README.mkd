@@ -13,6 +13,7 @@ Tentative de blog, publié sur [le net](http://lucas.bourneuf.net/blog).
 - checkbox : `[ ]` et `[x]` deviennent des cases à cocher fontawesome.
 - separator : séparateur de titre (désactivé).
 - chargement_differe : `loading="lazy"` sur les images et iframes des articles.
+- mail_image : dessine l'adresse `MAIL` dans `mail.png`, affichée à la place d'un lien mailto.
 - liquid_avant_html : traite les balises liquid (`{% img %}`, `{% video %}`) avant les blocs HTML,
   pour que celles placées dans `<center>…</center>` soient converties, comme avec l'ancien plugin.
 

@@ -9,8 +9,11 @@
   {% if link is string %}
   <li><a href="{{ link }}">{{ icone(icon) }}{{ name }}</a></li>
   {% else %}
-  {# (utilisateur, domaine) : écrits à l'envers, l'adresse est assemblée par le script de base.html #}
-  <li><a href="#" data-u="{{ link[0] | reverse }}" data-d="{{ link[1] | reverse }}">{{ icone(icon) }}{{ name }}</a></li>
+  {# (utilisateur, domaine) : adresse mail, affichée en image (mail.png, plugin mail_image) #}
+  <li class="mail">{{ icone(icon) }}<picture>
+    <source srcset="{{ SITEURL }}/mail-clair.png" media="(prefers-color-scheme: light)">
+    <img src="{{ SITEURL }}/mail.png" alt="{{ name }} (adresse en image)">
+  </picture></li>
   {% endif %}
   {% endfor %}
   {{ caller() if caller }}

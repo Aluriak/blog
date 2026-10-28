@@ -1,15 +1,38 @@
-/* vert-sur-noir : les couleurs de l'ancien thème bootstrap2-dark, sans bootstrap */
+/* vert-sur-noir : les couleurs de l'ancien thème bootstrap2-dark, sans bootstrap ;
+   sombre par défaut, clair si l'appareil le demande */
 
 :root {
+  color-scheme: dark light;
   --fond: #000;
   --bloc: #1c1c1c;
   --bord: #333;
   --texte: #c4c4c4;
   --titres: #ddd;
   --discret: #999;
+  --icones: #666;
   --vert: #7db904;
   --vert-clair: #b5dc66;
   --code: #ae81ff;
+  --code-fond: #222;
+  --code-bord: #444;
+}
+
+/* clair : même vert, assombri pour rester lisible sur fond blanc ; le code garde son fond sombre */
+@media (prefers-color-scheme: light) {
+  :root {
+    --fond: #fbfbf8;
+    --bloc: #efefe9;
+    --bord: #dcdcd4;
+    --texte: #2e2e2e;
+    --titres: #141414;
+    --discret: #6b6b66;
+    --icones: #9a9a92;
+    --vert: #4b7a00;
+    --vert-clair: #6a9e0a;
+    --code: #7b3fcf;
+    --code-fond: #f0eff5;
+    --code-bord: #d8d6e3;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -60,8 +83,8 @@ code {
   padding: .1em .35em;
   font-size: .88em;
   color: var(--code);
-  background: #222;
-  border: 1px solid #444;
+  background: var(--code-fond);
+  border: 1px solid var(--code-bord);
   border-radius: 3px;
 }
 pre {
@@ -69,7 +92,7 @@ pre {
   overflow-x: auto;
   font-size: .85rem;
   line-height: 1.5;
-  color: var(--titres);
+  color: #f8f8f2;
   background: #272822;
   border-radius: 4px;
 }
@@ -141,7 +164,7 @@ abbr[title] { text-decoration: underline dotted; cursor: help; }
   color: var(--discret);
 }
 .infos .tags { display: flex; flex-wrap: wrap; gap: .2em .8em; }
-.infos [class*="fa-"] { color: #666; margin-right: .2em; }
+.infos [class*="fa-"] { color: var(--icones); margin-right: .2em; }
 
 /* liste d'articles (accueil, tags) */
 .liste-articles { list-style: none; padding: 0; margin: 0; }
@@ -197,4 +220,8 @@ abbr[title] { text-decoration: underline dotted; cursor: help; }
 #sidebar li [class*="fa-"] { margin-right: .3em; }
 #sidebar .tag-1 { font-size: 1.05em; }
 #sidebar .tag-2 { font-size: .9em; }
+/* adresse mail en image (plugin mail_image), à la taille du texte */
+#sidebar .mail { white-space: nowrap; }
+#sidebar .mail img { height: 1.3em; width: auto; vertical-align: middle; }
+#sidebar .mail [class*="fa-"] { color: var(--vert); }
 #sidebar .compte { color: var(--discret); font-size: .85em; }

@@ -9,7 +9,7 @@ AUTHOR = 'lucas bourneuf'
 SITENAME = "lucas/blog"
 SERVERURL = 'https://lucas.bourneuf.net'
 SITEURL = '/blog'
-LANDING_URL = SERVERURL + '/landing/'  # lien « autres outils » de l'en-tête
+LANDING_URL = SERVERURL + '/landing/'  # lien « menu » de l'en-tête (la landing)
 
 PATH = 'content'
 TIMEZONE = 'Europe/Paris'
@@ -68,6 +68,7 @@ PLUGINS = [
 
 PLUGINS += [
     'chargement_differe',  # images chargées à l'approche de l'écran (loading="lazy")
+    'mail_image',  # adresse MAIL dessinée dans mail.png
 ]
 
 TAG_CLOUD_STEPS = 2  # number of different size
@@ -75,7 +76,8 @@ TAG_CLOUD_MAX_ITEMS = 10
 TAG_CLOUD_SORTING = 'random'
 TAG_CLOUD_BADGE = True
 
-LICENCE = 'WTFPL'  # affichée dans le pied de page
+LICENCE = 'GPLv3'  # affichée dans le pied de page
+LICENCE_URL = 'https://www.gnu.org/licenses/gpl-3.0.html'
 
 
 
@@ -84,8 +86,9 @@ LICENCE = 'WTFPL'  # affichée dans le pied de page
 ################################################################################
 # Blogroll:   (icône font awesome 6, nom affiché, lien)
 # icône : « house » (style solid), ou avec le style : « brands github », « regular square »
-# lien : une adresse, ou (utilisateur, domaine) pour un mail, assemblé dans la page par
-# javascript (les robots qui cherchent « mailto: » et « @ » dans le HTML ne le voient pas)
+# lien : une adresse, ou MAIL pour afficher l'adresse en image (mail.png, plugin mail_image),
+# que les robots qui cherchent des adresses dans le HTML ne voient pas
+MAIL = ('lucas.bourneuf', 'laposte.net')
 BLOG_LINKS = 'blog', 'bars', (
     ('house',      'home',    '{}'.format(SITEURL)),
     ('table-list', 'archive', '{}/archives.html'.format(SITEURL)),
@@ -96,7 +99,7 @@ LINKS = 'links', 'arrow-up-right-from-square', (
     ('brands mastodon', 'mastodon', 'https://mamot.fr/@aluriak'),
     ('brands keybase',  'keybase',  'https://keybase.io/aluriak'),
     ('cube',            'IPNS',     'https://bourneuf.net/ipns/Qmd4up4kjr8TNWc4rx6r4bFwpe6TJQjVVmfwtiv4q3FSPx'),
-    ('envelope',        'mail',     ('lucas.bourneuf', 'laposte.net')),
+    ('envelope',        'mail',     MAIL),
 )
 OUTER_WEB = 'outer web', 'brands wpexplorer', (
     ('circle-user',  'pro-domo',  'https://pro-domo.ddns.net/blog'),
